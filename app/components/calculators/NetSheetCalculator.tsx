@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CalculatorSection } from './CalculatorSection';
 import { DollarSign, RefreshCw, PieChart } from 'lucide-react';
 import { clsx } from 'clsx';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const NetSheetCalculator = () => {
   const [salePrice, setSalePrice] = useState(500000);
@@ -41,14 +42,14 @@ export const NetSheetCalculator = () => {
                     type="number" 
                     value={salePrice}
                     onChange={(e) => setSalePrice(Number(e.target.value))}
-                    className="w-full pl-8 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none text-lg font-semibold"
+                    className="w-full pl-8 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none text-lg font-semibold transition-all duration-200"
                 />
             </div>
             <input 
                 type="range" min="100000" max="2000000" step="5000"
                 value={salePrice}
                 onChange={(e) => setSalePrice(Number(e.target.value))}
-                className="w-full mt-2 accent-gold-500"
+                className="w-full mt-2 accent-gold-500 cursor-pointer"
             />
           </div>
 
@@ -61,7 +62,7 @@ export const NetSheetCalculator = () => {
                         type="number" 
                         value={mortgagePayoff}
                         onChange={(e) => setMortgagePayoff(Number(e.target.value))}
-                        className="w-full pl-6 pr-3 py-2 bg-gray-50 border border-gray-200 rounded outline-none focus:border-gold-500"
+                        className="w-full pl-6 pr-3 py-2 bg-gray-50 border border-gray-200 rounded outline-none focus:border-gold-500 transition-colors"
                     />
                 </div>
              </div>
@@ -71,13 +72,18 @@ export const NetSheetCalculator = () => {
                     type="number" 
                     value={commissionRate}
                     onChange={(e) => setCommissionRate(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded outline-none focus:border-gold-500"
+                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded outline-none focus:border-gold-500 transition-colors"
                 />
              </div>
           </div>
         </div>
 
-        <div className="bg-gray-50 rounded-xl p-6 space-y-3">
+        <motion.div 
+          key={netProceeds} // Animate on value change
+          initial={{ scale: 0.98, opacity: 0.8 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="bg-gray-50 rounded-xl p-6 space-y-3 border border-gray-100"
+        >
             <div className="flex justify-between text-sm">
                 <span className="text-gray-600">Est. Commission</span>
                 <span className="font-medium text-gray-900">-{formatCurrency(commission)}</span>
@@ -93,11 +99,17 @@ export const NetSheetCalculator = () => {
             <div className="h-px bg-gray-200 my-2" />
             <div className="flex justify-between items-end">
                 <span className="text-gold-600 font-bold uppercase text-sm">Net Proceeds</span>
-                <span className="text-3xl font-serif font-bold text-luxury-black">{formatCurrency(netProceeds)}</span>
+                <motion.span 
+                    key={netProceeds}
+                    initial={{ y: 5, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    className="text-3xl font-serif font-bold text-luxury-black"
+                >
+                    {formatCurrency(netProceeds)}
+                </motion.span>
             </div>
-        </div>
+        </motion.div>
       </div>
     </CalculatorSection>
   );
 };
-

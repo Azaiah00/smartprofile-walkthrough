@@ -15,6 +15,7 @@ import { MortgageCalculator } from "../components/calculators/MortgageCalculator
 import { ClosingCostCalculator } from "../components/calculators/ClosingCostCalculator";
 import { Section } from "../components/ui/Section";
 import { Container } from "../components/ui/Container";
+import { ParticleBackground } from "../components/ui/ParticleBackground";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -25,7 +26,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-luxury-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-luxury-black text-white overflow-x-hidden relative">
+      <ParticleBackground />
       <Navbar />
       <Hero />
       
