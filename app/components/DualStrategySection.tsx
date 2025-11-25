@@ -6,7 +6,7 @@ import { Home, Key } from 'lucide-react';
 
 export const DualStrategySection = () => {
   return (
-    <Section className="bg-luxury-cream relative overflow-hidden">
+    <Section className="bg-luxury-cream relative overflow-hidden pt-12 md:pt-16 pb-20 md:pb-32">
       <Container>
         <div className="text-center mb-16">
           <motion.span 

@@ -70,7 +70,7 @@ export const ExpandedRealtorProfile = () => {
       </div>
 
       {/* Bio & Story */}
-      <div className="py-24 bg-luxury-cream">
+      <div className="py-12 bg-luxury-cream">
         <Container>
             <div className="flex flex-col lg:flex-row gap-16 items-center">
                 <div className="w-full lg:w-1/2 relative">
