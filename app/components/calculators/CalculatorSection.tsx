@@ -11,7 +11,7 @@ interface CalculatorSectionProps {
   icon: LucideIcon;
   features: string[];
   children: React.ReactNode; // The interactive calculator component
-  isDark?: boolean;
+  isDark?: boolean; // Kept for API compatibility, but logic updated for light theme
   id?: string;
 }
 
@@ -26,7 +26,7 @@ export const CalculatorSection = ({
   id
 }: CalculatorSectionProps) => {
   return (
-    <Section id={id} className={isDark ? "bg-luxury-charcoal" : "bg-white"}>
+    <Section id={id} className={isDark ? "bg-luxury-beige" : "bg-luxury-cream"}>
       <Container>
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           
@@ -39,16 +39,16 @@ export const CalculatorSection = ({
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-gold-500/10">
-                  <Icon className="w-6 h-6 text-gold-500" />
+                  <Icon className="w-6 h-6 text-gold-600" />
                 </div>
-                <span className="text-gold-500 font-bold tracking-wider uppercase text-sm">{subtitle}</span>
+                <span className="text-gold-600 font-bold tracking-wider uppercase text-sm">{subtitle}</span>
               </div>
               
-              <h2 className={`text-4xl font-serif font-bold mb-6 ${isDark ? 'text-white' : 'text-luxury-black'}`}>
+              <h2 className="text-4xl font-serif font-bold mb-6 text-luxury-black">
                 {title}
               </h2>
               
-              <p className={`text-lg mb-8 leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className="text-lg mb-8 leading-relaxed text-gray-600">
                 {description}
               </p>
 
@@ -56,7 +56,7 @@ export const CalculatorSection = ({
                 {features.map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2.5 flex-shrink-0" />
-                    <p className={isDark ? 'text-gray-400' : 'text-gray-700'}>{feature}</p>
+                    <p className="text-gray-700">{feature}</p>
                   </div>
                 ))}
               </div>
@@ -69,7 +69,7 @@ export const CalculatorSection = ({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 bg-white"
+              className="rounded-2xl overflow-hidden shadow-xl shadow-gold-500/5 ring-1 ring-black/5 bg-white"
             >
               <div className="bg-gray-50 border-b border-gray-100 p-4 flex items-center justify-between">
                  <div className="flex gap-2">
@@ -90,4 +90,3 @@ export const CalculatorSection = ({
     </Section>
   );
 };
-

@@ -11,15 +11,15 @@ const Testimonial = ({ quote, author, role, delay }: { quote: string, author: st
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.8 }}
-    className="p-10 bg-luxury-charcoal rounded-[2rem] relative border border-white/5 hover:border-gold-500/30 transition-all duration-500 group"
+    className="p-10 bg-white rounded-[2rem] relative border border-gray-100 hover:border-gold-500/30 transition-all duration-500 group shadow-lg shadow-black/5"
   >
     <div className="flex gap-1 mb-6">
       {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-gold-500 fill-gold-500" />)}
     </div>
-    <p className="text-gray-300 text-xl italic mb-8 leading-relaxed font-light">"{quote}"</p>
+    <p className="text-gray-600 text-xl italic mb-8 leading-relaxed font-light">"{quote}"</p>
     <div>
-      <div className="font-bold text-white text-lg group-hover:text-gold-500 transition-colors">{author}</div>
-      <div className="text-gray-500 text-sm uppercase tracking-wider mt-1">{role}</div>
+      <div className="font-bold text-luxury-black text-lg group-hover:text-gold-600 transition-colors">{author}</div>
+      <div className="text-gray-400 text-sm uppercase tracking-wider mt-1">{role}</div>
     </div>
   </motion.div>
 );
@@ -27,14 +27,14 @@ const Testimonial = ({ quote, author, role, delay }: { quote: string, author: st
 export const TestimonialsCTA = () => {
   return (
     <>
-      <Section className="bg-luxury-black py-32">
+      <Section className="bg-luxury-beige py-32">
         <Container>
           <div className="text-center mb-20">
             <motion.h2 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-6xl font-serif font-bold text-white mb-6"
+                className="text-4xl md:text-6xl font-serif font-bold text-luxury-black mb-6"
             >
               Trusted by Top Producers
             </motion.h2>
@@ -63,7 +63,7 @@ export const TestimonialsCTA = () => {
       </Section>
 
       {/* Final Presentation CTA */}
-      <Section className="bg-white py-32 relative overflow-hidden">
+      <Section className="bg-luxury-cream py-32 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
              <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(212,175,55,0.1),transparent_50%)]" />
         </div>
@@ -90,13 +90,13 @@ export const TestimonialsCTA = () => {
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="bg-luxury-black text-white p-8 rounded-3xl shadow-2xl"
+                    className="bg-white border border-gray-100 text-luxury-black p-8 rounded-3xl shadow-2xl shadow-gold-500/10"
                   >
-                      <div className="text-gold-500 uppercase tracking-widest text-xs font-bold mb-6">Contact For Access</div>
+                      <div className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-6">Contact For Access</div>
                       
                       <div className="space-y-6">
                           <div className="flex items-center gap-4 group cursor-pointer">
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-colors">
+                              <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-white transition-colors text-gold-600">
                                   <Phone className="w-5 h-5" />
                               </div>
                               <div>
@@ -106,7 +106,7 @@ export const TestimonialsCTA = () => {
                           </div>
                           
                           <div className="flex items-center gap-4 group cursor-pointer">
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-colors">
+                              <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-white transition-colors text-gold-600">
                                   <Mail className="w-5 h-5" />
                               </div>
                               <div>
@@ -116,7 +116,7 @@ export const TestimonialsCTA = () => {
                           </div>
 
                            <div className="flex items-center gap-4 group cursor-pointer">
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-colors">
+                              <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-white transition-colors text-gold-600">
                                   <Calendar className="w-5 h-5" />
                               </div>
                               <div>

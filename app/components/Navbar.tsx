@@ -33,14 +33,14 @@ export const Navbar = () => {
         <div className="flex justify-between items-start">
           {/* Logo */}
           <div className="flex items-center gap-3 pointer-events-auto">
-              <div className="w-10 h-10 bg-luxury-black border border-gold-500/30 rounded-sm rotate-45 flex items-center justify-center shadow-2xl shadow-gold-500/10 backdrop-blur-md">
-                  <div className="w-5 h-5 bg-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.5)]"></div>
+              <div className="w-10 h-10 bg-luxury-cream border border-gold-500/30 rounded-sm rotate-45 flex items-center justify-center shadow-xl shadow-gold-500/10 backdrop-blur-md">
+                  <div className="w-5 h-5 bg-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-serif font-bold text-white tracking-tight leading-none drop-shadow-lg">
-                  Smart<span className="text-gold-500">Profile</span>
+                <span className="text-2xl font-serif font-bold text-luxury-black tracking-tight leading-none drop-shadow-sm">
+                  Smart<span className="text-gold-600">Profile</span>
                 </span>
-                <span className="text-[10px] text-gold-500/80 uppercase tracking-[0.2em] font-medium">
+                <span className="text-[10px] text-gold-600/80 uppercase tracking-[0.2em] font-medium">
                   Presentation Deck
                 </span>
               </div>

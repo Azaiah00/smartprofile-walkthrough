@@ -10,7 +10,7 @@ const ResourceCard = ({ title, description, category }: { title: string, descrip
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-gold-500 group"
+    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow border-t-4 border-gold-500 group"
   >
     <div className="flex justify-between items-start mb-4">
       <span className="text-xs font-bold tracking-widest text-gold-600 uppercase bg-gold-50 px-2 py-1 rounded">{category}</span>
@@ -28,12 +28,12 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-b border-white/10 last:border-0">
+        <div className="border-b border-gray-200 last:border-0">
             <button 
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-6 flex items-center justify-between text-left hover:text-gold-500 transition-colors"
+                className="w-full py-6 flex items-center justify-between text-left hover:text-gold-600 transition-colors"
             >
-                <span className="font-serif font-bold text-lg text-white">{question}</span>
+                <span className="font-serif font-bold text-lg text-luxury-black">{question}</span>
                 <ChevronRight className={`w-5 h-5 text-gold-500 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`} />
             </button>
             <motion.div 
@@ -41,7 +41,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
                 animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
                 className="overflow-hidden"
             >
-                <p className="text-gray-400 pb-6 leading-relaxed">
+                <p className="text-gray-600 pb-6 leading-relaxed">
                     {answer}
                 </p>
             </motion.div>
@@ -57,11 +57,11 @@ export const EducationalResources = () => {
   ];
 
   return (
-    <Section className="bg-luxury-charcoal relative overflow-hidden">
+    <Section className="bg-luxury-cream relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-20 -left-20 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 -right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 -right-20 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative z-10">
@@ -70,7 +70,7 @@ export const EducationalResources = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gold-500 font-medium uppercase tracking-widest text-sm"
+            className="text-gold-600 font-medium uppercase tracking-widest text-sm"
           >
             Expert Knowledge
           </motion.span>
@@ -78,11 +78,11 @@ export const EducationalResources = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-serif font-bold text-white mt-4 mb-6"
+            className="text-3xl md:text-5xl font-serif font-bold text-luxury-black mt-4 mb-6"
           >
-            Educate to <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600">Empower</span>
+            Educate to <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-700">Empower</span>
           </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Position yourself as the trusted advisor. SmartProfile includes a comprehensive library of guides and resources that answer client questions before they're even asked.
           </p>
         </div>
@@ -93,17 +93,17 @@ export const EducationalResources = () => {
             ))}
         </div>
 
-        <div className="bg-luxury-black rounded-3xl p-8 md:p-12 border border-white/5">
+        <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl shadow-gold-500/5">
             <div className="flex flex-col lg:flex-row gap-12">
                 <div className="lg:w-1/3">
                     <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6">
-                        <HelpCircle className="w-6 h-6 text-gold-500" />
+                        <HelpCircle className="w-6 h-6 text-gold-600" />
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-white mb-4">Answer Questions,<br />Build Trust</h3>
-                    <p className="text-gray-400 mb-8">
+                    <h3 className="text-2xl font-serif font-bold text-luxury-black mb-4">Answer Questions,<br />Build Trust</h3>
+                    <p className="text-gray-600 mb-8">
                         Your profile works for you 24/7, fielding common inquiries and demonstrating your expertise.
                     </p>
-                    <Button variant="outline">View Full Library</Button>
+                    <Button variant="outline" className="bg-white hover:bg-gold-50 border-gray-200 text-luxury-black">View Full Library</Button>
                 </div>
                 <div className="lg:w-2/3">
                     <FAQItem 
@@ -126,4 +126,3 @@ export const EducationalResources = () => {
     </Section>
   );
 };
-

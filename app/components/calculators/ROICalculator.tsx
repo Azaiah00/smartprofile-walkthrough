@@ -56,23 +56,23 @@ export const ROICalculator = () => {
             ))}
          </div>
 
-         <div className="bg-luxury-charcoal rounded-xl p-6 text-white mt-6">
+         <div className="bg-gold-50 rounded-xl p-6 text-luxury-black border border-gold-100 mt-6">
             <div className="flex items-start justify-between mb-4">
                 <div>
-                    <h4 className="text-gold-500 font-bold text-sm uppercase tracking-wider">Projected Outcome</h4>
-                    <div className="text-2xl font-serif font-bold mt-1">{current.label}</div>
+                    <h4 className="text-gold-600 font-bold text-sm uppercase tracking-wider">Projected Outcome</h4>
+                    <div className="text-2xl font-serif font-bold mt-1 text-luxury-black">{current.label}</div>
                 </div>
-                <ArrowUpRight className="text-green-400 w-8 h-8" />
+                <ArrowUpRight className="text-green-600 w-8 h-8" />
             </div>
             
             <div className="flex gap-4">
-                <div className="flex-1 p-3 bg-white/10 rounded-lg">
-                    <div className="text-xs text-gray-400 uppercase">Cost</div>
-                    <div className="text-lg font-bold">${current.cost.toLocaleString()}</div>
+                <div className="flex-1 p-3 bg-white rounded-lg border border-gray-100">
+                    <div className="text-xs text-gray-500 uppercase">Cost</div>
+                    <div className="text-lg font-bold text-gray-900">${current.cost.toLocaleString()}</div>
                 </div>
-                <div className="flex-1 p-3 bg-gold-500/20 border border-gold-500/30 rounded-lg">
-                    <div className="text-xs text-gold-400 uppercase">Value Added</div>
-                    <div className="text-lg font-bold text-gold-400">+${current.valueAdd.toLocaleString()}</div>
+                <div className="flex-1 p-3 bg-gold-100 border border-gold-200 rounded-lg">
+                    <div className="text-xs text-gold-700 uppercase">Value Added</div>
+                    <div className="text-lg font-bold text-gold-700">+${current.valueAdd.toLocaleString()}</div>
                 </div>
             </div>
          </div>
@@ -80,4 +80,3 @@ export const ROICalculator = () => {
     </CalculatorSection>
   );
 };
-

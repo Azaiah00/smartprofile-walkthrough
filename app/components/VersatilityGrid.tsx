@@ -10,13 +10,13 @@ const UseCase = ({ icon: Icon, title, description, index }: { icon: any, title: 
     whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
     viewport={{ once: true, margin: "-50px" }}
     transition={{ delay: index * 0.1, duration: 0.8, type: "spring" }}
-    className="p-8 rounded-3xl bg-luxury-charcoal border border-white/5 hover:border-gold-500/30 hover:bg-white/5 transition-all duration-500 group perspective-1000"
+    className="p-8 rounded-3xl bg-white border border-gray-100 hover:border-gold-500/30 hover:bg-gold-50/30 transition-all duration-500 group perspective-1000 shadow-sm hover:shadow-xl"
   >
-    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-luxury-black transition-all duration-500 text-gold-500 shadow-lg group-hover:shadow-gold-500/20 group-hover:rotate-3">
+    <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 text-gold-600 shadow-sm group-hover:shadow-gold-500/20 group-hover:rotate-3">
       <Icon className="w-7 h-7" />
     </div>
-    <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">{title}</h3>
-    <p className="text-gray-400 text-base leading-relaxed">{description}</p>
+    <h3 className="text-2xl font-serif font-bold text-luxury-black mb-4 group-hover:translate-x-2 transition-transform duration-300">{title}</h3>
+    <p className="text-gray-600 text-base leading-relaxed">{description}</p>
   </motion.div>
 );
 
@@ -55,7 +55,7 @@ export const VersatilityGrid = () => {
   ];
 
   return (
-    <Section className="bg-luxury-black py-32">
+    <Section className="bg-luxury-cream py-32">
       <Container>
         <div className="text-center mb-24">
           <motion.span 
@@ -63,7 +63,7 @@ export const VersatilityGrid = () => {
             whileInView={{ opacity: 1, letterSpacing: "0.2em" }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="text-gold-500 font-medium uppercase text-sm block mb-4"
+            className="text-gold-600 font-medium uppercase text-sm block mb-4"
           >
             Versatility
           </motion.span>
@@ -72,15 +72,15 @@ export const VersatilityGrid = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-serif font-bold text-white mb-8"
+            className="text-4xl md:text-6xl font-serif font-bold text-luxury-black mb-8"
           >
-            One Profile. <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600">Infinite Uses.</span>
+            One Profile. <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-700">Infinite Uses.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-400 max-w-2xl mx-auto font-light"
+            className="text-xl text-gray-600 max-w-2xl mx-auto font-light"
           >
             Adaptable to every stage of your client relationship, from first impression to closing table.
           </motion.p>

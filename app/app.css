@@ -17,11 +17,16 @@
 
   --color-luxury-black: #0A0A0A;
   --color-luxury-charcoal: #1A1A1A;
+  
+  /* New Light Theme Colors */
+  --color-luxury-cream: #FAF9F6; /* Off-white */
+  --color-luxury-beige: #F5F0E6; /* Warm beige */
+  --color-luxury-sand: #E8E4D9; /* Darker beige/sand */
 }
 
 html,
 body {
-  @apply bg-luxury-black text-white antialiased;
+  @apply bg-luxury-cream text-luxury-black antialiased;
   font-family: var(--font-sans);
   scroll-behavior: smooth;
 }
@@ -36,14 +41,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A; 
+  background: #F5F0E6; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333; 
+  background: #D4AF37; 
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37; 
+  background: #AA8C2C; 
 }

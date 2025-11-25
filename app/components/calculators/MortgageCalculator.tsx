@@ -28,7 +28,6 @@ export const MortgageCalculator = () => {
       subtitle="Clarity for Buyers"
       description="Move beyond simple P&I calculations. This comprehensive tool factors in taxes, insurance, and current rates to give buyers a realistic picture of their monthly obligation, helping them make confident offers."
       icon={Home}
-      isDark={true}
       features={[
         "Includes Principal, Interest, Taxes, and Insurance (PITI)",
         "Adjustable down payment and interest rates",
@@ -77,7 +76,7 @@ export const MortgageCalculator = () => {
             </div>
         </div>
 
-        <div className="bg-gray-50 rounded-xl p-6">
+        <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
             <div className="text-center mb-6">
                 <div className="text-sm text-gray-500 uppercase font-bold tracking-wider mb-1">Estimated Monthly Payment</div>
                 <div className="text-4xl font-serif font-bold text-luxury-black">
@@ -113,4 +112,3 @@ export const MortgageCalculator = () => {
     </CalculatorSection>
   );
 };
-

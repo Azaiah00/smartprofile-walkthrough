@@ -11,7 +11,7 @@ const ThemeCard = ({ name, colors, index }: { name: string, colors: string[], in
     viewport={{ once: true }}
     transition={{ delay: index * 0.15, duration: 0.8, type: "spring" }}
     whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
-    className="bg-white p-4 rounded-xl shadow-2xl hover:shadow-xl transition-all cursor-pointer group origin-bottom"
+    className="bg-white p-4 rounded-xl shadow-xl shadow-black/5 hover:shadow-2xl transition-all cursor-pointer group origin-bottom"
     style={{ zIndex: 4 - index }}
   >
     <div className="h-40 rounded-lg mb-4 relative overflow-hidden flex shadow-inner">
@@ -22,7 +22,7 @@ const ThemeCard = ({ name, colors, index }: { name: string, colors: string[], in
         <span className="text-white font-bold text-sm tracking-widest uppercase">Preview</span>
       </div>
     </div>
-    <h3 className="text-center font-serif font-bold text-gray-900 text-lg">{name}</h3>
+    <h3 className="text-center font-serif font-bold text-luxury-black text-lg">{name}</h3>
   </motion.div>
 );
 
@@ -35,7 +35,7 @@ export const DesignShowcase = () => {
   ];
 
   return (
-    <Section className="bg-white text-luxury-black py-32 overflow-hidden">
+    <Section className="bg-luxury-beige text-luxury-black py-32 overflow-hidden">
       <Container>
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="w-full lg:w-1/2 relative z-10">
@@ -46,7 +46,7 @@ export const DesignShowcase = () => {
                 transition={{ duration: 0.8 }}
             >
                 <span className="text-gold-600 font-bold uppercase tracking-widest text-sm mb-4 block">Aesthetic Excellence</span>
-                <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight">
+                <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight text-luxury-black">
                   Designed to Match <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-700">Your Brand Identity</span>
                 </h2>
@@ -60,7 +60,7 @@ export const DesignShowcase = () => {
                       <Palette className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold mb-2 font-serif">Premium Color Palettes</h4>
+                      <h4 className="text-2xl font-bold mb-2 font-serif text-luxury-black">Premium Color Palettes</h4>
                       <p className="text-gray-600 leading-relaxed">Choose from our curated luxury themes or let us implement your specific brand colors perfectly.</p>
                     </div>
                   </div>
@@ -69,7 +69,7 @@ export const DesignShowcase = () => {
                       <Smartphone className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold mb-2 font-serif">Mobile-First Architecture</h4>
+                      <h4 className="text-2xl font-bold mb-2 font-serif text-luxury-black">Mobile-First Architecture</h4>
                       <p className="text-gray-600 leading-relaxed">Over 70% of real estate searches happen on mobile. Your profile is engineered to perform flawlessly on any device.</p>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export const DesignShowcase = () => {
                       <Zap className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold mb-2 font-serif">Lightning Fast Performance</h4>
+                      <h4 className="text-2xl font-bold mb-2 font-serif text-luxury-black">Lightning Fast Performance</h4>
                       <p className="text-gray-600 leading-relaxed">Built with cutting-edge tech (React & TypeScript) for instant loading and buttery smooth animations.</p>
                     </div>
                   </div>
@@ -87,7 +87,7 @@ export const DesignShowcase = () => {
                       <Search className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold mb-2 font-serif">Seamless IDX Integration</h4>
+                      <h4 className="text-2xl font-bold mb-2 font-serif text-luxury-black">Seamless IDX Integration</h4>
                       <p className="text-gray-600 leading-relaxed">Already have a BuyingBuddy subscription? We can integrate your live listings search directly into your SmartProfile for a complete website solution.</p>
                     </div>
                   </div>

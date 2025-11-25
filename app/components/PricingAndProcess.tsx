@@ -6,17 +6,17 @@ import { Check } from 'lucide-react';
 
 const Step = ({ number, title, description }: { number: string, title: string, description: string }) => (
   <div className="relative pl-12 pb-12 border-l border-gold-500/30 last:border-l-0 last:pb-0">
-    <div className="absolute top-0 left-0 -translate-x-1/2 w-10 h-10 rounded-full bg-luxury-black border-2 border-gold-500 text-gold-500 font-bold flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+    <div className="absolute top-0 left-0 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-gold-500 text-gold-600 font-bold flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
       {number}
     </div>
-    <h4 className="text-xl font-bold text-white mb-2">{title}</h4>
-    <p className="text-gray-400">{description}</p>
+    <h4 className="text-xl font-bold text-luxury-black mb-2">{title}</h4>
+    <p className="text-gray-600">{description}</p>
   </div>
 );
 
 export const PricingAndProcess = () => {
   return (
-    <Section className="bg-luxury-black border-t border-white/5 py-32">
+    <Section className="bg-luxury-cream border-t border-gold-500/10 py-32">
       <Container>
         <div className="flex flex-col lg:flex-row gap-20">
           
@@ -28,10 +28,10 @@ export const PricingAndProcess = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-gold-500 font-medium uppercase tracking-widest text-sm mb-4 block">The Roadmap</span>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-12">
+              <span className="text-gold-600 font-medium uppercase tracking-widest text-sm mb-4 block">The Roadmap</span>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-luxury-black mb-12">
                 How We Build Your <br />
-                <span className="text-gold-500">Digital Legacy</span>
+                <span className="text-gold-600">Digital Legacy</span>
               </h2>
               
               <div className="mt-10">
@@ -61,18 +61,18 @@ export const PricingAndProcess = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring" }}
-              className="bg-gradient-to-br from-luxury-charcoal to-black border border-gold-500/30 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl"
+              className="bg-white border border-gold-500/30 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-gold-500/5"
             >
-              <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/10 rounded-full blur-[80px]" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/5 rounded-full blur-[80px]" />
               
               <div className="relative z-10">
-                <h3 className="text-3xl font-serif font-bold text-white mb-2">The Investment</h3>
+                <h3 className="text-3xl font-serif font-bold text-luxury-black mb-2">The Investment</h3>
                 <div className="flex items-baseline gap-2 mb-8">
-                    <span className="text-6xl font-bold text-gold-500 font-serif">$500</span>
-                    <span className="text-gray-400 text-lg">/ one-time</span>
+                    <span className="text-6xl font-bold text-gold-600 font-serif">$500</span>
+                    <span className="text-gray-500 text-lg">/ one-time</span>
                 </div>
                 
-                <p className="text-gray-300 mb-10 pb-10 border-b border-white/10 text-lg leading-relaxed">
+                <p className="text-gray-600 mb-10 pb-10 border-b border-gray-100 text-lg leading-relaxed">
                     A single closed deal pays for this asset 20x over. No monthly fees. No subscriptions. You own your digital presence.
                 </p>
 
@@ -93,10 +93,10 @@ export const PricingAndProcess = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + (i * 0.05) }}
-                        className="flex items-center gap-4 text-gray-200 text-lg"
+                        className="flex items-center gap-4 text-gray-700 text-lg"
                     >
                         <div className="w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0">
-                             <Check className="w-3.5 h-3.5 text-gold-500" />
+                             <Check className="w-3.5 h-3.5 text-gold-600" />
                         </div>
                         <span>{item}</span>
                     </motion.li>
@@ -104,7 +104,7 @@ export const PricingAndProcess = () => {
                 </ul>
 
                 <div className="p-4 bg-gold-500/10 rounded-xl border border-gold-500/20 text-center">
-                    <p className="text-gold-500 text-sm font-medium uppercase tracking-wider">Limited availability per month</p>
+                    <p className="text-gold-600 text-sm font-medium uppercase tracking-wider">Limited availability per month</p>
                 </div>
               </div>
             </motion.div>
