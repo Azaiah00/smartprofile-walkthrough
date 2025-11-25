@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { ChevronDown, Info, MessageSquareQuote } from 'lucide-react';
+import { ChevronDown, Info, MessageSquareQuote, Check, X } from 'lucide-react';
 
 export const StrategicFinancials = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,35 +58,100 @@ export const StrategicFinancials = () => {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="overflow-hidden bg-white"
+                  className="overflow-hidden bg-white text-left"
                 >
                   <div className="p-8 pt-0 border-t border-gray-100">
-                    <div className="grid md:grid-cols-2 gap-8 pt-8">
-                      <div>
-                        <h4 className="font-bold text-luxury-black mb-2">The Context</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                          Sellers now have complete flexibility regarding buyer agent compensation. It is no longer a requirement to list on MLS, but it remains a powerful strategic tool.
-                        </p>
-                        <h4 className="font-bold text-luxury-black mb-2">Our Recommendation</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          We strongly recommend offering <strong>2.5% - 3%</strong> to buyer agents. This ensures your property remains attractive to the widest pool of qualified buyers who are represented by professionals.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-red-50 p-6 rounded-xl border border-red-100">
-                        <h4 className="font-bold text-red-800 mb-3 text-sm uppercase tracking-wide">Risks of NOT Compensating</h4>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2 text-sm text-red-700">
-                            <span className="font-bold">•</span> Limited showings from agents
-                          </li>
-                          <li className="flex items-start gap-2 text-sm text-red-700">
-                            <span className="font-bold">•</span> Longer days on market
-                          </li>
-                          <li className="flex items-start gap-2 text-sm text-red-700">
-                            <span className="font-bold">•</span> Lower final sales price due to reduced competition
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="pt-8 space-y-8">
+                        
+                        {/* Context Section */}
+                        <div>
+                            <h3 className="text-xl font-serif font-bold text-luxury-black mb-4">Understanding Buyer's Agent Compensation</h3>
+                            <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                                <p>
+                                    The NAR lawsuit was filed by home sellers who claimed that the traditional practice of sellers paying both the listing agent and buyer's agent commission was anti-competitive and kept commission rates artificially high. The lawsuit alleged that the requirement to offer buyer's agent compensation (which was previously mandatory in many MLS systems) limited sellers' ability to negotiate commission structures.
+                                </p>
+                                <p>
+                                    As part of the settlement, the NAR agreed to change its rules, making it clear that sellers are no longer required to offer compensation to buyer's agents. This gives sellers more flexibility, but it's important to understand the implications of this change.
+                                </p>
+                                <p className="font-bold text-luxury-black">
+                                    However, offering compensation to the buyer's agent remains the industry standard and is highly recommended for several strategic reasons.
+                                </p>
+                                <div className="p-4 bg-gold-50 border-l-4 border-gold-500 text-gold-800 font-medium">
+                                    Important: You are NOT required to compensate the buyer's agent, but doing so significantly increases your chances of selling quickly and for top dollar.
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Pros & Cons Grid */}
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-green-50/50 p-6 rounded-xl border border-green-100">
+                                <h4 className="font-bold text-green-800 mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                                    <Check className="w-4 h-4" /> Pros of Compensating
+                                </h4>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Maximum Exposure: More buyer agents will show your home",
+                                        "Faster Sales: More showings lead to quicker offers",
+                                        "Higher Sale Prices: Competition drives price up",
+                                        "Industry Standard: Matches buyer expectations",
+                                        "Better Qualified Buyers: Agents vet their clients",
+                                        "Professional Representation: Ensures smooth transactions"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-sm text-green-700">
+                                            <span className="font-bold mt-1">•</span> {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="bg-red-50/50 p-6 rounded-xl border border-red-100">
+                                <h4 className="font-bold text-red-800 mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                                    <X className="w-4 h-4" /> Cons of Not Compensating
+                                </h4>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Limited Showings: Agents may skip your home",
+                                        "Longer Time on Market: Fewer offers, longer wait",
+                                        "Lower Offers: Less competition reduces final price",
+                                        "Buyer Pays Commission: Reduces buyer's purchasing power",
+                                        "Fewer Qualified Buyers: Some can't afford agent fees",
+                                        "Market Disadvantage: Competitors offer compensation"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-sm text-red-700">
+                                            <span className="font-bold mt-1">•</span> {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Recommendation */}
+                        <div className="border-t border-gray-100 pt-8">
+                            <h4 className="font-bold text-luxury-black mb-4 flex items-center gap-2 text-lg">
+                                <Info className="w-5 h-5 text-gold-600" /> Our Recommendation
+                            </h4>
+                            <p className="text-gray-600 text-sm mb-4">
+                                We strongly recommend offering buyer's agent compensation (typically <strong>2.5-3%</strong> of the sale price) because:
+                            </p>
+                            <ul className="grid md:grid-cols-2 gap-4 mb-6">
+                                <li className="flex items-start gap-2 text-sm text-gray-600">
+                                    <span className="text-gold-500 font-bold">•</span> It's the industry standard in the DMV market
+                                </li>
+                                <li className="flex items-start gap-2 text-sm text-gray-600">
+                                    <span className="text-gold-500 font-bold">•</span> Cost is offset by higher offers/faster sale
+                                </li>
+                                <li className="flex items-start gap-2 text-sm text-gray-600">
+                                    <span className="text-gold-500 font-bold">•</span> Maximizes exposure to qualified buyers
+                                </li>
+                                <li className="flex items-start gap-2 text-sm text-gray-600">
+                                    <span className="text-gold-500 font-bold">•</span> Makes your home more competitive
+                                </li>
+                            </ul>
+                            <p className="text-gray-500 text-sm italic border-l-2 border-gray-200 pl-4">
+                                "The goal is to maximize your NET proceeds. While compensating the buyer's agent is an expense, it typically results in a higher sale price and faster sale, which benefits you overall."
+                            </p>
+                        </div>
+
                     </div>
                   </div>
                 </motion.div>

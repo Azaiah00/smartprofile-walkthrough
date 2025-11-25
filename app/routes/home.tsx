@@ -52,7 +52,6 @@ export default function Home() {
         title="The Buyer Experience" 
         subtitle="Turn confused browsers into confident power-buyers with these built-in resource modules." 
       />
-      <BuyerRoadmap />
       <MoneyTalkSection />
 
       {/* Seller Experience Modules */}
