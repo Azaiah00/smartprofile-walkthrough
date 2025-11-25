@@ -9,6 +9,9 @@ export const StagingComparison = () => {
     <Section className="bg-luxury-cream">
       <Container>
         <div className="text-center mb-16">
+          <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-4">
+             <span className="text-xs font-bold text-gold-600 uppercase tracking-wide">Module 3: Visual Marketing</span>
+          </div>
           <h2 className="text-4xl font-serif font-bold text-luxury-black mb-4">The Visual Edge</h2>
           <p className="text-gray-600">Why we include premium Virtual Staging with every listing.</p>
         </div>
@@ -78,4 +81,3 @@ export const StagingComparison = () => {
     </Section>
   );
 };
-

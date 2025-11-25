@@ -11,6 +11,11 @@ export const StrategicFinancials = () => {
     <Section className="bg-white border-t border-gray-100">
       <Container>
         <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+             <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-2">
+                <span className="text-xs font-bold text-gold-600 uppercase tracking-wide">Module 2: Market Intelligence</span>
+             </div>
+          </div>
           <div className="bg-luxury-beige rounded-2xl overflow-hidden border border-gold-500/20">
             <div className="p-8 text-center">
               <div className="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-sm mb-4">
@@ -75,4 +80,3 @@ export const StrategicFinancials = () => {
     </Section>
   );
 };
-

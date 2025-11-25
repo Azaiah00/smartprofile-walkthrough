@@ -15,11 +15,13 @@ const steps = [
 
 export const SellerRoadmap = () => {
   return (
-    <Section className="bg-luxury-cream overflow-hidden">
+    <Section className="bg-luxury-cream overflow-hidden border-t border-gray-100">
       <Container>
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/3">
-            <span className="text-gold-600 font-medium uppercase tracking-widest text-sm mb-2 block">Seller Journey</span>
+            <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-4">
+                <span className="text-xs font-bold text-gold-600 uppercase tracking-wide">Module 1: The System</span>
+            </div>
             <h2 className="text-4xl font-serif font-bold text-luxury-black mb-6">
               7 Steps to a <br />
               <span className="text-gold-600">Sold Sign</span>
@@ -58,4 +60,3 @@ export const SellerRoadmap = () => {
     </Section>
   );
 };
-

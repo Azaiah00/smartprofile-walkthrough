@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Introduction } from "../components/Introduction";
 import { ExpandedRealtorProfile } from "../components/ExpandedRealtorProfile";
 import { DualStrategySection } from "../components/DualStrategySection";
+import { FeatureHeader } from "../components/FeatureHeader";
 import { BuyerRoadmap } from "../components/BuyerRoadmap";
 import { SellerRoadmap } from "../components/SellerRoadmap";
 import { MoneyTalkSection } from "../components/MoneyTalkSection";
@@ -42,10 +43,24 @@ export default function Home() {
       {/* Primary Focus: The Realtor */}
       <ExpandedRealtorProfile />
 
-      {/* New Content Sections - Logical Flow */}
+      {/* The "Fork in the Road" */}
       <DualStrategySection />
+
+      {/* Buyer Experience Modules */}
+      <FeatureHeader 
+        type="buyer"
+        title="The Buyer Experience" 
+        subtitle="Turn confused browsers into confident power-buyers with these built-in resource modules." 
+      />
       <BuyerRoadmap />
       <MoneyTalkSection />
+
+      {/* Seller Experience Modules */}
+      <FeatureHeader 
+        type="seller"
+        title="The Seller Experience" 
+        subtitle="Position yourself as the strategic advisor who protects their equity and maximizes their return." 
+      />
       <SellerRoadmap />
       <StrategicFinancials />
       <StagingComparison />

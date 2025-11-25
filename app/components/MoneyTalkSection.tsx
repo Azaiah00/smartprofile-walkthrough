@@ -16,6 +16,9 @@ export const MoneyTalkSection = () => {
     <Section className="bg-luxury-beige">
       <Container>
         <div className="text-center mb-16">
+          <div className="inline-block bg-blue-100/50 px-3 py-1 rounded-full mb-4">
+             <span className="text-xs font-bold text-blue-700 uppercase tracking-wide">Module 2: Financial Literacy</span>
+          </div>
           <h2 className="text-4xl font-serif font-bold text-luxury-black mb-4">Money Talk: Financial Clarity</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We don't just open doors; we open the books. Understanding the true cost of purchase is the first step to a successful transaction.
@@ -82,4 +85,3 @@ export const MoneyTalkSection = () => {
     </Section>
   );
 };
-
