@@ -31,14 +31,6 @@ export const BuyerRoadmap = () => {
   return (
     <Section className="bg-white py-24 border-t border-gray-100">
       <Container>
-        <div className="text-center mb-16">
-          <div className="inline-block bg-blue-50 px-3 py-1 rounded-full mb-4">
-             <span className="text-xs font-bold text-blue-600 uppercase tracking-wide">Module 1: The Process</span>
-          </div>
-          <h2 className="text-4xl font-serif font-bold text-luxury-black mb-4">The Buyer Game Plan</h2>
-          <p className="text-gray-600">From "Just Looking" to "Just Moved In"</p>
-        </div>
-
         <div className="relative">
           {/* Connecting Line */}
           <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-100 -translate-y-1/2 hidden md:block" />

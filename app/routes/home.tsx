@@ -47,11 +47,6 @@ export default function Home() {
       <DualStrategySection />
 
       {/* Buyer Experience Modules */}
-      <FeatureHeader 
-        type="buyer"
-        title="The Buyer Experience" 
-        subtitle="Turn confused browsers into confident power-buyers with these built-in resource modules." 
-      />
       <BuyerRoadmap />
       <MoneyTalkSection />
 
