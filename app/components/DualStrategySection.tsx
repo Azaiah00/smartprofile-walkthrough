@@ -39,10 +39,10 @@ export const DualStrategySection = () => {
             whileHover={{ y: -10 }}
             className="flex-1 bg-white rounded-3xl p-8 shadow-xl border border-gray-100 group cursor-pointer relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
             
-            <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 relative z-10">
-              <Key className="w-8 h-8 text-blue-600" />
+            <div className="w-16 h-16 rounded-2xl bg-gold-500/20 flex items-center justify-center mb-6 relative z-10">
+              <Key className="w-8 h-8 text-gold-600" />
             </div>
             
             <h3 className="text-2xl font-serif font-bold text-luxury-black mb-2">Homebuyer Consultation</h3>

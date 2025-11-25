@@ -55,7 +55,7 @@ export const MoneyTalkSection = () => {
           {/* Cost Breakdown */}
           <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+              <div className="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-600">
                 <DollarSign className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-luxury-black">The Cash You Need</h3>

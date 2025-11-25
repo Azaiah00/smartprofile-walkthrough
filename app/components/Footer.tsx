@@ -7,7 +7,7 @@ export const Footer = () => {
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            &copy; {new Date().getFullYear()} Real Advancement Real Estate. All rights reserved.
+            &copy; 2023 Real Advancement Real Estate. All rights reserved.
           </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold-500 transition-colors">Privacy Policy</a>
