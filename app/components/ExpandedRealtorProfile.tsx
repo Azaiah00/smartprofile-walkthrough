@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { Star, Quote, MapPin, Award, Phone, Mail, Calendar } from 'lucide-react';
+import { Award, Phone, Mail } from 'lucide-react';
 import { Button } from './ui/Button';
 
 const Stat = ({ value, label }: { value: string, label: string }) => (
@@ -38,14 +38,14 @@ export const ExpandedRealtorProfile = () => {
                 className="max-w-2xl"
             >
                 <div className="flex gap-3 mb-6">
-                    <Badge text="Luxury Specialist" />
-                    <Badge text="Top 1% Producer" />
+                    <Badge text="Founder" />
+                    <Badge text="7 Years Experience" />
                 </div>
                 <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-none">
-                    Sarah <br /> <span className="text-gold-500">Anderson</span>
+                    Fred <br /> <span className="text-gold-500">Sales</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8 font-light leading-relaxed">
-                    Redefining the real estate experience through integrity, market intelligence, and an unwavering commitment to your success.
+                    Built by a realtor, for realtors. No fluff. Just results.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" className="gap-2">
@@ -63,10 +63,10 @@ export const ExpandedRealtorProfile = () => {
       <div className="border-y border-white/10 bg-luxury-charcoal">
         <Container>
             <div className="flex flex-wrap justify-center divide-x divide-white/10">
-                <Stat value="$120M+" label="Sales Volume" />
-                <Stat value="15" label="Years Experience" />
-                <Stat value="450+" label="Families Served" />
-                <Stat value="24" label="Days on Market" />
+                <Stat value="3x" label="GCI Growth" />
+                <Stat value="7" label="Years Experience" />
+                <Stat value="100%" label="Realtor Built" />
+                <Stat value="24/7" label="Automated" />
             </div>
         </Container>
       </div>
@@ -77,7 +77,8 @@ export const ExpandedRealtorProfile = () => {
             <div className="flex flex-col lg:flex-row gap-16 items-center">
                 <div className="w-full lg:w-1/2 relative">
                     <div className="aspect-[4/5] rounded-2xl overflow-hidden relative z-10 border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Sarah Anderson" className="w-full h-full object-cover" />
+                        {/* Updated to use local asset */}
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Fred Sales" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-gold-500/20 rounded-full blur-3xl z-0" />
                     <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl z-0" />
@@ -85,38 +86,42 @@ export const ExpandedRealtorProfile = () => {
                 
                 <div className="w-full lg:w-1/2">
                     <h3 className="text-gold-500 font-bold uppercase tracking-widest text-sm mb-4">The Person Behind The Brand</h3>
-                    <h2 className="text-4xl font-serif font-bold text-white mb-8">More Than Just An Agent</h2>
+                    <h2 className="text-4xl font-serif font-bold text-white mb-8">Fred Sales</h2>
+                    <h4 className="text-xl text-gold-500 font-serif mb-6">Founder, Real Advancement</h4>
                     
                     <div className="space-y-6 text-gray-400 leading-relaxed">
                         <p>
-                            My journey in real estate began with a simple belief: that every client deserves not just a salesperson, but a strategic partner. With a background in finance and interior design, I bring a unique dual perspective to every transaction.
+                            Hey there. I'm Fred, and I've been in your shoes. For 7 years, I've been grinding in real estate, facing the same frustrations you probably deal with every day.
                         </p>
                         <p>
-                            For sellers, I curate a marketing narrative that highlights the soul of your home, not just its specs. For buyers, I analyze long-term value and lifestyle fit with brutal honesty.
+                            You know what I'm talking about—those expensive websites that don't convert. Those business cards that end up in the trash. The marketing tools that promise the world but deliver nothing. I was spending thousands on solutions that weren't actually solving my problems.
                         </p>
                         <p>
-                            I don't measure success by deal volume, but by the trust I earn. When you work with me, you get my personal cell number, my undivided attention, and my relentless negotiation skills working in your corner.
+                            So I did something about it. I reached out to a team of developers who actually listen, and together we built exactly what I needed: SmartProfile™ and Virtual Staging. Not because some marketing team told me to, but because these are the tools I wish I'd had from day one.
+                        </p>
+                        <p>
+                             These aren't theoretical products built in a boardroom. They're the exact systems I used to triple my own GCI. Real solutions for real realtors, built by someone who's been in the trenches with you.
                         </p>
                     </div>
 
                     <div className="mt-10 pt-10 border-t border-white/10">
-                        <h4 className="text-white font-bold mb-6 flex items-center gap-2"><Award className="text-gold-500" /> Awards & Recognition</h4>
+                        <h4 className="text-white font-bold mb-6 flex items-center gap-2"><Award className="text-gold-500" /> Milestones</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="flex items-center gap-3 text-gray-400">
                                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-                                President's Circle 2023, 2024
+                                7 Years Industry Experience
                             </div>
                             <div className="flex items-center gap-3 text-gray-400">
                                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-                                Luxury Home Specialist Certified
+                                Founder of Real Advancement
                             </div>
                             <div className="flex items-center gap-3 text-gray-400">
                                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-                                Top 100 Agents Regional
+                                Tripled Personal GCI
                             </div>
                             <div className="flex items-center gap-3 text-gray-400">
                                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-                                5-Star Client Satisfaction Award
+                                Solutions Built for Realtors
                             </div>
                         </div>
                     </div>
@@ -127,4 +132,3 @@ export const ExpandedRealtorProfile = () => {
     </Section>
   );
 };
-
