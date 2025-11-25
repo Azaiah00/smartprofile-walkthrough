@@ -3,6 +3,12 @@ import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Introduction } from "../components/Introduction";
 import { ExpandedRealtorProfile } from "../components/ExpandedRealtorProfile";
+import { DualStrategySection } from "../components/DualStrategySection";
+import { BuyerRoadmap } from "../components/BuyerRoadmap";
+import { SellerRoadmap } from "../components/SellerRoadmap";
+import { MoneyTalkSection } from "../components/MoneyTalkSection";
+import { StrategicFinancials } from "../components/StrategicFinancials";
+import { StagingComparison } from "../components/StagingComparison";
 import { VersatilityGrid } from "../components/VersatilityGrid";
 import { DesignShowcase } from "../components/DesignShowcase";
 import { PricingAndProcess } from "../components/PricingAndProcess";
@@ -26,7 +32,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-luxury-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-luxury-cream text-luxury-black overflow-x-hidden relative">
       <ParticleBackground />
       <Navbar />
       <Hero />
@@ -36,6 +42,14 @@ export default function Home() {
       
       {/* Primary Focus: The Realtor */}
       <ExpandedRealtorProfile />
+
+      {/* New Content Sections - Logical Flow */}
+      <DualStrategySection />
+      <BuyerRoadmap />
+      <MoneyTalkSection />
+      <SellerRoadmap />
+      <StrategicFinancials />
+      <StagingComparison />
       
       {/* Feature Overview */}
       <VersatilityGrid />
