@@ -44,7 +44,7 @@ export const VersatilityGrid = () => {
     {
       icon: Share2,
       title: "Shareable Asset",
-      description: "Your digital business card. Share via text, email, social media, or QR code instantly.",
+      description: "Your digital business card. Share via text, email, social media, or QR code instantly. Now featuring custom SmartCards.",
       onClick: () => setIsQRModalOpen(true)
     },
     {

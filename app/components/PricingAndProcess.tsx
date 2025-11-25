@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { Check } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 
 const Step = ({ number, title, description }: { number: string, title: string, description: string }) => (
   <div className="relative pl-12 pb-12 border-l border-gold-500/30 last:border-l-0 last:pb-0">
@@ -14,11 +14,78 @@ const Step = ({ number, title, description }: { number: string, title: string, d
   </div>
 );
 
+const PricingCard = ({ 
+  title, 
+  priceSetup, 
+  priceMonthly, 
+  description, 
+  features, 
+  isPopular = false,
+  delay = 0
+}: { 
+  title: string, 
+  priceSetup: string, 
+  priceMonthly: string, 
+  description: string, 
+  features: string[],
+  isPopular?: boolean,
+  delay?: number
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay, type: "spring" }}
+    className={`bg-luxury-black border ${isPopular ? 'border-gold-500 shadow-[0_0_30px_rgba(212,175,55,0.15)]' : 'border-gray-800'} rounded-[2.5rem] p-8 relative overflow-hidden flex-1`}
+  >
+    {isPopular && (
+      <div className="absolute top-0 right-0 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-20">
+        Best Value
+      </div>
+    )}
+    <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/5 rounded-full blur-[80px]" />
+    
+    <div className="relative z-10 flex flex-col h-full">
+      <h3 className="text-2xl font-serif font-bold text-white mb-2">{title}</h3>
+      
+      <div className="flex flex-col gap-1 mb-6">
+          <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-bold text-gold-500 font-serif">${priceSetup}</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider">setup</span>
+          </div>
+          <div className="flex items-baseline gap-2 pl-1">
+              <span className="text-xl font-bold text-white font-serif">+ ${priceMonthly}</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider">/ month</span>
+          </div>
+      </div>
+      
+      <p className="text-gray-400 mb-6 pb-6 border-b border-gray-800 text-sm leading-relaxed min-h-[60px]">
+          {description}
+      </p>
+
+      <ul className="space-y-3 mb-8 flex-grow">
+          {features.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 text-gray-300 text-base">
+              <div className="w-5 h-5 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                   <Check className="w-3 h-3 text-gold-500" />
+              </div>
+              <span>{item}</span>
+          </li>
+          ))}
+      </ul>
+
+      <div className="p-3 bg-gold-500/10 rounded-xl border border-gold-500/20 text-center mt-auto">
+          <p className="text-gold-500 text-xs font-medium uppercase tracking-wider">Limited availability</p>
+      </div>
+    </div>
+  </motion.div>
+);
+
 export const PricingAndProcess = () => {
   return (
     <Section className="bg-luxury-cream border-t border-gray-100 py-32">
       <Container>
-        <div className="flex flex-col lg:flex-row gap-20">
+        <div className="flex flex-col lg:flex-row gap-20 mb-24">
           
           {/* Process Section */}
           <div className="w-full lg:w-1/2">
@@ -54,69 +121,63 @@ export const PricingAndProcess = () => {
             </motion.div>
           </div>
 
-          {/* Pricing Section */}
-          <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring" }}
-              className="bg-luxury-black border border-gray-800 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl"
-            >
-              <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/10 rounded-full blur-[80px]" />
-              
-              <div className="relative z-10">
-                <h3 className="text-3xl font-serif font-bold text-white mb-2">The Investment</h3>
-                
-                <div className="flex flex-col gap-1 mb-8">
-                    <div className="flex items-baseline gap-3">
-                        <span className="text-5xl font-bold text-gold-500 font-serif">$500</span>
-                        <span className="text-gray-400 text-sm uppercase tracking-wider">one-time setup</span>
-                    </div>
-                    <div className="flex items-baseline gap-3 pl-1">
-                        <span className="text-2xl font-bold text-white font-serif">+ $50</span>
-                        <span className="text-gray-400 text-sm uppercase tracking-wider">/ month maintenance</span>
-                    </div>
-                </div>
-                
-                <p className="text-gray-400 mb-8 pb-8 border-b border-gray-800 text-base leading-relaxed">
-                    Your complete digital ecosystem. Includes hosting, domain management, updates, and dedicated support.
-                </p>
-
-                <ul className="space-y-4 mb-8">
-                    {[
-                    "Custom Design & Build",
-                    "Hosting & Domain Connection",
-                    "Lead Capture Integration (CRM)",
-                    "Monthly Performance Reports",
-                    "All Interactive Calculators",
-                    "Mobile & SEO Optimization",
-                    "BuyingBuddy IDX Integration (Add-on)"
-                    ].map((item, i) => (
-                    <motion.li 
-                        key={i} 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + (i * 0.05) }}
-                        className="flex items-center gap-4 text-gray-300 text-lg"
-                    >
-                        <div className="w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center flex-shrink-0">
-                             <Check className="w-3.5 h-3.5 text-gold-500" />
-                        </div>
-                        <span>{item}</span>
-                    </motion.li>
-                    ))}
-                </ul>
-
-                <div className="p-4 bg-gold-500/10 rounded-xl border border-gold-500/20 text-center">
-                    <p className="text-gold-500 text-sm font-medium uppercase tracking-wider">Limited availability per month</p>
-                </div>
-              </div>
-            </motion.div>
+          {/* Pricing Intro / Context (Optional or spacer) */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+             <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+             >
+               <h3 className="text-3xl font-serif font-bold text-luxury-black mb-6">
+                 An Investment in <span className="text-gold-600">Excellence</span>
+               </h3>
+               <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                 Choose the package that fits your business model. Whether you're a solo top-producer or looking to expand your brand footprint, we have a SmartProfile solution for you.
+               </p>
+               <div className="flex items-center gap-4 text-gold-600 font-medium">
+                  <Star className="w-5 h-5 fill-current" />
+                  <span>No Long-term Contracts</span>
+               </div>
+             </motion.div>
           </div>
 
         </div>
+
+        {/* Pricing Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <PricingCard 
+                title="Single Profile"
+                priceSetup="500"
+                priceMonthly="50"
+                description="Perfect for the individual agent ready to elevate their personal brand. Choice of 1 profile design."
+                features={[
+                    "Custom Design & Build",
+                    "Hosting & Domain Connection",
+                    "Lead Capture Integration",
+                    "Monthly Performance Reports",
+                    "All Interactive Calculators",
+                    "Mobile & SEO Optimization"
+                ]}
+            />
+            <PricingCard 
+                title="Double Profile"
+                priceSetup="900"
+                priceMonthly="50"
+                description="Ideal for partners or agents wanting distinct profiles for different niches. 2 Profiles included."
+                features={[
+                    "Everything in Single Profile",
+                    "2 Complete SmartProfiles",
+                    "2-for-1 Monthly Maintenance",
+                    "50 Custom 'SmartCards' (Free)",
+                    "Unified Brand Strategy",
+                    "Priority Support"
+                ]}
+                isPopular={true}
+                delay={0.2}
+            />
+        </div>
+
       </Container>
     </Section>
   );
