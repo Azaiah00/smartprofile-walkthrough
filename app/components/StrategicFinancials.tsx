@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { ChevronDown, Info } from 'lucide-react';
+import { ChevronDown, Info, MessageSquareQuote } from 'lucide-react';
 
 export const StrategicFinancials = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +11,30 @@ export const StrategicFinancials = () => {
     <Section className="bg-white border-t border-gray-100">
       <Container>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-             <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-2">
+          
+          {/* Intro / Value Prop for the Realtor */}
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+             <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-4">
                 <span className="text-xs font-bold text-gold-600 uppercase tracking-wide">Module 2: Market Intelligence</span>
              </div>
+             
+             <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center"
+             >
+                <MessageSquareQuote className="w-8 h-8 text-gold-400 mb-3" />
+                <h3 className="text-2xl font-serif font-bold text-luxury-black mb-3">
+                    We Handle The "Tough Talk" For You
+                </h3>
+                <p className="text-gray-500 leading-relaxed">
+                    The commission conversation is critical, but it doesn't have to be uncomfortable. This module provides a data-backed framework that naturally guides your sellers to the right decision—making you the strategic advisor, not just the salesperson.
+                </p>
+             </motion.div>
           </div>
-          <div className="bg-luxury-beige rounded-2xl overflow-hidden border border-gold-500/20">
+
+          <div className="bg-luxury-beige rounded-2xl overflow-hidden border border-gold-500/20 shadow-lg">
             <div className="p-8 text-center">
               <div className="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-sm mb-4">
                 <Info className="w-4 h-4 text-gold-600" />

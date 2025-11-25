@@ -47,6 +47,11 @@ export default function Home() {
       <DualStrategySection />
 
       {/* Buyer Experience Modules */}
+      <FeatureHeader 
+        type="buyer"
+        title="The Buyer Experience" 
+        subtitle="Turn confused browsers into confident power-buyers with these built-in resource modules." 
+      />
       <BuyerRoadmap />
       <MoneyTalkSection />
 
@@ -56,9 +61,7 @@ export default function Home() {
         title="The Seller Experience" 
         subtitle="Position yourself as the strategic advisor who protects their equity and maximizes their return." 
       />
-      <SellerRoadmap />
       <StrategicFinancials />
-      <StagingComparison />
       
       {/* Feature Overview */}
       <VersatilityGrid />
@@ -83,8 +86,7 @@ export default function Home() {
         <ClosingCostCalculator />
       </div>
       
-      {/* Educational Content */}
-      <EducationalResources />
+      {/* Educational Content REMOVED */}
 
       <DesignShowcase />
       <PricingAndProcess />
