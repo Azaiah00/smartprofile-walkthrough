@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
 import { BookOpen, Presentation, Share2, MessageCircle, Handshake, Globe } from 'lucide-react';
+import { QRCodeModal } from './ui/QRCodeModal';
 
-const UseCase = ({ icon: Icon, title, description, index }: { icon: any, title: string, description: string, index: number }) => (
+const UseCase = ({ icon: Icon, title, description, index, onClick }: { icon: any, title: string, description: string, index: number, onClick?: () => void }) => (
   <motion.div
     initial={{ opacity: 0, x: -20, rotateY: 15 }}
     whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
     viewport={{ once: true, margin: "-50px" }}
     transition={{ delay: index * 0.1, duration: 0.8, type: "spring" }}
-    className="p-8 rounded-3xl bg-white border border-gray-100 hover:border-gold-500/30 hover:bg-gold-50/30 transition-all duration-500 group perspective-1000 shadow-sm hover:shadow-xl"
+    onClick={onClick}
+    className={`p-8 rounded-3xl bg-white border border-gray-100 hover:border-gold-500/30 hover:shadow-xl transition-all duration-500 group perspective-1000 relative overflow-hidden ${onClick ? 'cursor-pointer' : ''}`}
   >
-    <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 text-gold-600 shadow-sm group-hover:shadow-gold-500/20 group-hover:rotate-3">
+    {onClick && (
+        <div className="absolute top-4 right-4 text-[10px] font-bold bg-gold-50 text-gold-600 px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            TRY ME
+        </div>
+    )}
+    <div className="w-14 h-14 rounded-2xl bg-gold-50/50 flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 text-gold-600 shadow-sm group-hover:shadow-gold-500/20 group-hover:rotate-3">
       <Icon className="w-7 h-7" />
     </div>
     <h3 className="text-2xl font-serif font-bold text-luxury-black mb-4 group-hover:translate-x-2 transition-transform duration-300">{title}</h3>
-    <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+    <p className="text-gray-500 text-base leading-relaxed">{description}</p>
   </motion.div>
 );
 
 export const VersatilityGrid = () => {
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
+
   const useCases = [
     {
       icon: BookOpen,
@@ -35,7 +44,8 @@ export const VersatilityGrid = () => {
     {
       icon: Share2,
       title: "Shareable Asset",
-      description: "Your digital business card. Share via text, email, social media, or QR code instantly."
+      description: "Your digital business card. Share via text, email, social media, or QR code instantly.",
+      onClick: () => setIsQRModalOpen(true)
     },
     {
       icon: MessageCircle,
@@ -91,6 +101,8 @@ export const VersatilityGrid = () => {
             <UseCase key={idx} {...useCase} index={idx} />
           ))}
         </div>
+
+        <QRCodeModal isOpen={isQRModalOpen} onClose={() => setIsQRModalOpen(false)} />
       </Container>
     </Section>
   );
