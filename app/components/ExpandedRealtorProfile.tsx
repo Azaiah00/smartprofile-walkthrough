@@ -78,7 +78,7 @@ export const ExpandedRealtorProfile = () => {
                 <div className="w-full lg:w-1/2 relative">
                     <div className="aspect-[4/5] rounded-2xl overflow-hidden relative z-10 border border-white/10">
                         {/* Updated to use local asset */}
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Fred Sales" className="w-full h-full object-cover" />
+                        <img src="/fred-sales.jpg" alt="Fred Sales" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-gold-500/20 rounded-full blur-3xl z-0" />
                     <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl z-0" />
