@@ -2,37 +2,67 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, QrCode, Smartphone, Share2, ChevronRight, ChevronLeft, Mail, Link as LinkIcon, Instagram } from 'lucide-react';
 
-const BusinessCardSlide = () => (
-  <div className="bg-luxury-black rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30 aspect-[1.58/1] relative group perspective-1000 w-full">
-    {/* Front Design */}
-    <div className="absolute inset-0 p-8 flex flex-col justify-between bg-gradient-to-br from-gray-900 to-black">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full" />
-        
-        <div className="flex justify-between items-start">
-            <div>
-                <h3 className="text-2xl font-serif font-bold text-white">Fred Sales</h3>
-                <p className="text-gold-500 text-sm uppercase tracking-widest">Real Advancement</p>
-            </div>
-            <QrCode className="w-8 h-8 text-gold-500 opacity-50" />
-        </div>
+const BusinessCardSlide = () => {
+  const [isFlipped, setIsFlipped] = useState(false);
 
-        <div className="flex gap-8 items-end">
-            <div className="bg-white p-3 rounded-xl shadow-lg border-2 border-gold-500 transform transition-transform hover:scale-105 cursor-pointer">
-                <QrCode className="w-24 h-24 text-black" />
+  return (
+    <div className="w-full max-w-md mx-auto aspect-[1.58/1]" style={{ perspective: '1000px' }}>
+      <motion.div
+        className="relative w-full h-full cursor-pointer"
+        style={{ transformStyle: 'preserve-3d' }}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        {/* Front Side - Buyer Profile */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-luxury-black rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30"
+          style={{ backfaceVisibility: 'hidden', rotateY: 0 }}
+        >
+          <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full" />
+            
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-serif font-bold text-white mb-2">Fred Sales</h3>
+              <p className="text-gold-500 text-sm uppercase tracking-widest">Real Advancement</p>
             </div>
-            <div className="pb-2">
-                <p className="text-gray-400 text-xs mb-1">Scan to view profile</p>
-                <div className="flex gap-2 text-white">
-                    <Smartphone className="w-4 h-4" />
-                    <Share2 className="w-4 h-4" />
-                </div>
+
+            <div className="flex flex-col items-center gap-4">
+              <p className="text-gold-500 text-sm font-bold uppercase tracking-wider">Buyer Profile Consultation</p>
+              <div className="bg-white p-4 rounded-xl shadow-lg border-2 border-gold-500">
+                <QrCode className="w-32 h-32 text-black" />
+              </div>
+              <p className="text-gray-400 text-xs mt-2">Click card to flip</p>
             </div>
-        </div>
+          </div>
+        </motion.div>
+
+        {/* Back Side - Seller Profile */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-luxury-black rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30"
+          style={{ backfaceVisibility: 'hidden', rotateY: 180 }}
+        >
+          <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gold-500/10 rounded-br-full" />
+            
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-serif font-bold text-white mb-2">Fred Sales</h3>
+              <p className="text-gold-500 text-sm uppercase tracking-widest">Real Advancement</p>
+            </div>
+
+            <div className="flex flex-col items-center gap-4">
+              <p className="text-gold-500 text-sm font-bold uppercase tracking-wider">Seller Profile Consultation</p>
+              <div className="bg-white p-4 rounded-xl shadow-lg border-2 border-gold-500">
+                <QrCode className="w-32 h-32 text-black" />
+              </div>
+              <p className="text-gray-400 text-xs mt-2">Click card to flip</p>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
     </div>
-    {/* Shine Effect */}
-    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-  </div>
-);
+  );
+};
 
 const InstagramSlide = () => (
   <div className="bg-black rounded-[3rem] shadow-2xl overflow-hidden border border-gray-800 aspect-[9/19] w-full max-w-[300px] mx-auto relative flex flex-col">
