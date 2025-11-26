@@ -7,8 +7,6 @@ import { QRCodeModal } from './ui/QRCodeModal';
 import { 
   PresentationToolModal, 
   DealClosingModal, 
-  ClientCommunicationModal, 
-  EducationalResourceModal, 
   PrimaryWebsiteModal 
 } from './ui/InteractiveModals';
 
@@ -38,16 +36,13 @@ export const VersatilityGrid = () => {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
   const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false);
   const [isDealClosingModalOpen, setIsDealClosingModalOpen] = useState(false);
-  const [isClientCommunicationModalOpen, setIsClientCommunicationModalOpen] = useState(false);
-  const [isEducationalResourceModalOpen, setIsEducationalResourceModalOpen] = useState(false);
   const [isPrimaryWebsiteModalOpen, setIsPrimaryWebsiteModalOpen] = useState(false);
 
   const useCases = [
     {
       icon: BookOpen,
       title: "Educational Resource",
-      description: "Comprehensive guides and FAQs that position you as the educator, building trust before you even meet.",
-      onClick: () => setIsEducationalResourceModalOpen(true)
+      description: "Comprehensive guides and FAQs that position you as the educator, building trust before you even meet."
     },
     {
       icon: Presentation,
@@ -64,8 +59,7 @@ export const VersatilityGrid = () => {
     {
       icon: MessageCircle,
       title: "Client Communication",
-      description: "Send specific sections to buyers or sellers to answer their exact questions without overwhelming them.",
-      onClick: () => setIsClientCommunicationModalOpen(true)
+      description: "Send specific sections to buyers or sellers to answer their exact questions without overwhelming them."
     },
     {
       icon: Handshake,
@@ -76,7 +70,7 @@ export const VersatilityGrid = () => {
     {
       icon: Globe,
       title: "Primary Website",
-      description: "Replace your current site with a mobile-first experience. Plus, seamless BuyingBuddy IDX integration for live listings.",
+      description: "Use as your main website or seamlessly extend your existing site. Mobile-first design with BuyingBuddy IDX integration for live listings—flexible to fit your needs.",
       onClick: () => setIsPrimaryWebsiteModalOpen(true)
     }
   ];
@@ -122,8 +116,6 @@ export const VersatilityGrid = () => {
         <QRCodeModal isOpen={isQRModalOpen} onClose={() => setIsQRModalOpen(false)} />
         <PresentationToolModal isOpen={isPresentationModalOpen} onClose={() => setIsPresentationModalOpen(false)} />
         <DealClosingModal isOpen={isDealClosingModalOpen} onClose={() => setIsDealClosingModalOpen(false)} />
-        <ClientCommunicationModal isOpen={isClientCommunicationModalOpen} onClose={() => setIsClientCommunicationModalOpen(false)} />
-        <EducationalResourceModal isOpen={isEducationalResourceModalOpen} onClose={() => setIsEducationalResourceModalOpen(false)} />
         <PrimaryWebsiteModal isOpen={isPrimaryWebsiteModalOpen} onClose={() => setIsPrimaryWebsiteModalOpen(false)} />
       </Container>
     </Section>
