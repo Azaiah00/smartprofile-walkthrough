@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Introduction } from "../components/Introduction";
+import { ExpandedRealtorProfile } from "../components/ExpandedRealtorProfile";
 import { DualStrategySection } from "../components/DualStrategySection";
 import { FeatureHeader } from "../components/FeatureHeader";
 import { BuyerRoadmap } from "../components/BuyerRoadmap";
@@ -40,6 +41,9 @@ export default function Home() {
       {/* What is SmartProfile? */}
       <Introduction />
       
+      {/* Primary Focus: The Realtor */}
+      <ExpandedRealtorProfile />
+
       {/* The "Fork in the Road" */}
       <DualStrategySection />
 

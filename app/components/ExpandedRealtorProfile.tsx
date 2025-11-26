@@ -1,9 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { Award, Phone, Mail } from 'lucide-react';
-import { Button } from './ui/Button';
+import { Award } from 'lucide-react';
 
 const Stat = ({ value, label }: { value: string, label: string }) => (
   <div className="text-center px-6 py-4 border-r border-gold-500/20 last:border-0">
@@ -12,53 +10,9 @@ const Stat = ({ value, label }: { value: string, label: string }) => (
   </div>
 );
 
-const Badge = ({ text }: { text: string }) => (
-  <span className="px-3 py-1 bg-gold-500/10 border border-gold-500/20 rounded-full text-gold-600 text-xs font-bold uppercase tracking-wide">
-    {text}
-  </span>
-);
-
 export const ExpandedRealtorProfile = () => {
   return (
     <Section className="bg-luxury-cream py-0 relative">
-      {/* Hero / Intro Part */}
-      <div className="relative h-[80vh] min-h-[600px] flex items-center">
-        <div className="absolute inset-0 z-0">
-             {/* Background Image with Overlay */}
-             <div className="absolute inset-0 bg-[url('/fred-profile-screenshot.png')] bg-cover bg-center opacity-40"></div>
-             <div className="absolute inset-0 bg-gradient-to-r from-luxury-cream via-luxury-cream/90 to-transparent"></div>
-        </div>
-        
-        <Container className="relative z-10">
-            <motion.div 
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="max-w-2xl"
-            >
-                <div className="flex gap-3 mb-6">
-                    <Badge text="Founder" />
-                    <Badge text="7 Years Experience" />
-                </div>
-                <h1 className="text-5xl md:text-7xl font-serif font-bold text-luxury-black mb-6 leading-none">
-                    Fred <br /> <span className="text-gold-600">Sales</span>
-                </h1>
-                <p className="text-xl text-gray-600 mb-8 font-light leading-relaxed">
-                    Built by a realtor, for realtors. No fluff. Just results.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="gap-2 shadow-lg shadow-gold-500/10">
-                        <Phone className="w-4 h-4" /> Schedule Consultation
-                    </Button>
-                    <Button variant="outline" size="lg" className="gap-2 bg-white/50 hover:bg-white text-luxury-black border-gray-200">
-                        <Mail className="w-4 h-4" /> Contact Me
-                    </Button>
-                </div>
-            </motion.div>
-        </Container>
-      </div>
-
       {/* Stats Bar - REMOVED EXTRA STATS AS REQUESTED */}
       <div className="border-y border-gold-500/10 bg-luxury-beige">
         <Container>
