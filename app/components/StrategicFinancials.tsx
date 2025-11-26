@@ -14,8 +14,8 @@ export const StrategicFinancials = () => {
           
           {/* Intro / Value Prop for the Realtor */}
           <div className="text-center mb-12 max-w-2xl mx-auto">
-             <div className="inline-block bg-gold-50 px-3 py-1 rounded-full mb-4">
-                <span className="text-xs font-bold text-gold-600 uppercase tracking-wide">Module 2: Market Intelligence</span>
+             <div className="inline-block bg-luxury-black px-3 py-1 rounded-full mb-4">
+                <span className="text-xs font-bold text-gold-500 uppercase tracking-wide">Included Seller Profile</span>
              </div>
              
              <motion.div 
