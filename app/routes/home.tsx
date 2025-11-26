@@ -13,6 +13,7 @@ import { StagingComparison } from "../components/StagingComparison";
 import { VersatilityGrid } from "../components/VersatilityGrid";
 import { DesignShowcase } from "../components/DesignShowcase";
 import { PricingAndProcess } from "../components/PricingAndProcess";
+import { VirtualStagingAddOn } from "../components/VirtualStagingAddOn";
 import { Footer } from "../components/Footer";
 import { EducationalResources } from "../components/EducationalResources";
 import { NetSheetCalculator } from "../components/calculators/NetSheetCalculator";
@@ -91,6 +92,7 @@ export default function Home() {
 
       <DesignShowcase />
       <PricingAndProcess />
+      <VirtualStagingAddOn />
       <Footer />
     </div>
   );
