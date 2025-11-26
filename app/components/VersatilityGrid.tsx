@@ -4,6 +4,13 @@ import { Container } from './ui/Container';
 import { Section } from './ui/Section';
 import { BookOpen, Presentation, Share2, MessageCircle, Handshake, Globe } from 'lucide-react';
 import { QRCodeModal } from './ui/QRCodeModal';
+import { 
+  PresentationToolModal, 
+  DealClosingModal, 
+  ClientCommunicationModal, 
+  EducationalResourceModal, 
+  PrimaryWebsiteModal 
+} from './ui/InteractiveModals';
 
 const UseCase = ({ icon: Icon, title, description, index, onClick }: { icon: any, title: string, description: string, index: number, onClick?: () => void }) => (
   <motion.div
@@ -15,7 +22,7 @@ const UseCase = ({ icon: Icon, title, description, index, onClick }: { icon: any
     className={`p-8 rounded-3xl bg-white border border-gray-100 hover:border-gold-500/30 hover:shadow-xl transition-all duration-500 group perspective-1000 relative overflow-hidden ${onClick ? 'cursor-pointer' : ''}`}
   >
     {onClick && (
-        <div className="absolute top-4 right-4 text-[10px] font-bold bg-gold-50 text-gold-600 px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-4 right-4 text-[10px] font-bold bg-gold-500 text-white px-2 py-1 rounded-full shadow-lg animate-pulse">
             TRY ME
         </div>
     )}
@@ -29,17 +36,24 @@ const UseCase = ({ icon: Icon, title, description, index, onClick }: { icon: any
 
 export const VersatilityGrid = () => {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
+  const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false);
+  const [isDealClosingModalOpen, setIsDealClosingModalOpen] = useState(false);
+  const [isClientCommunicationModalOpen, setIsClientCommunicationModalOpen] = useState(false);
+  const [isEducationalResourceModalOpen, setIsEducationalResourceModalOpen] = useState(false);
+  const [isPrimaryWebsiteModalOpen, setIsPrimaryWebsiteModalOpen] = useState(false);
 
   const useCases = [
     {
       icon: BookOpen,
       title: "Educational Resource",
-      description: "Comprehensive guides and FAQs that position you as the educator, building trust before you even meet."
+      description: "Comprehensive guides and FAQs that position you as the educator, building trust before you even meet.",
+      onClick: () => setIsEducationalResourceModalOpen(true)
     },
     {
       icon: Presentation,
       title: "Presentation Tool",
-      description: "Use interactive calculators during listing appointments to demonstrate numbers in real-time."
+      description: "Use interactive calculators during listing appointments to demonstrate numbers in real-time.",
+      onClick: () => setIsPresentationModalOpen(true)
     },
     {
       icon: Share2,
@@ -50,17 +64,20 @@ export const VersatilityGrid = () => {
     {
       icon: MessageCircle,
       title: "Client Communication",
-      description: "Send specific sections to buyers or sellers to answer their exact questions without overwhelming them."
+      description: "Send specific sections to buyers or sellers to answer their exact questions without overwhelming them.",
+      onClick: () => setIsClientCommunicationModalOpen(true)
     },
     {
       icon: Handshake,
       title: "Deal-Closing Tool",
-      description: "Demonstrate pricing scenarios, ROI, and net sheets to overcome objections and close the deal."
+      description: "Demonstrate pricing scenarios, ROI, and net sheets to overcome objections and close the deal.",
+      onClick: () => setIsDealClosingModalOpen(true)
     },
     {
       icon: Globe,
       title: "Primary Website",
-      description: "Replace your current site with a mobile-first experience. Plus, seamless BuyingBuddy IDX integration for live listings."
+      description: "Replace your current site with a mobile-first experience. Plus, seamless BuyingBuddy IDX integration for live listings.",
+      onClick: () => setIsPrimaryWebsiteModalOpen(true)
     }
   ];
 
@@ -103,6 +120,11 @@ export const VersatilityGrid = () => {
         </div>
 
         <QRCodeModal isOpen={isQRModalOpen} onClose={() => setIsQRModalOpen(false)} />
+        <PresentationToolModal isOpen={isPresentationModalOpen} onClose={() => setIsPresentationModalOpen(false)} />
+        <DealClosingModal isOpen={isDealClosingModalOpen} onClose={() => setIsDealClosingModalOpen(false)} />
+        <ClientCommunicationModal isOpen={isClientCommunicationModalOpen} onClose={() => setIsClientCommunicationModalOpen(false)} />
+        <EducationalResourceModal isOpen={isEducationalResourceModalOpen} onClose={() => setIsEducationalResourceModalOpen(false)} />
+        <PrimaryWebsiteModal isOpen={isPrimaryWebsiteModalOpen} onClose={() => setIsPrimaryWebsiteModalOpen(false)} />
       </Container>
     </Section>
   );
