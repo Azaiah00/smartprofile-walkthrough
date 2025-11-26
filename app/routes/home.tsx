@@ -2,7 +2,6 @@ import type { Route } from "./+types/home";
 import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Introduction } from "../components/Introduction";
-import { ExpandedRealtorProfile } from "../components/ExpandedRealtorProfile";
 import { DualStrategySection } from "../components/DualStrategySection";
 import { FeatureHeader } from "../components/FeatureHeader";
 import { BuyerRoadmap } from "../components/BuyerRoadmap";
@@ -13,6 +12,7 @@ import { StagingComparison } from "../components/StagingComparison";
 import { VersatilityGrid } from "../components/VersatilityGrid";
 import { DesignShowcase } from "../components/DesignShowcase";
 import { PricingAndProcess } from "../components/PricingAndProcess";
+import { Footer } from "../components/Footer";
 import { EducationalResources } from "../components/EducationalResources";
 import { NetSheetCalculator } from "../components/calculators/NetSheetCalculator";
 import { ROICalculator } from "../components/calculators/ROICalculator";
@@ -40,9 +40,6 @@ export default function Home() {
       {/* What is SmartProfile? */}
       <Introduction />
       
-      {/* Primary Focus: The Realtor */}
-      <ExpandedRealtorProfile />
-
       {/* The "Fork in the Road" */}
       <DualStrategySection />
 
@@ -90,6 +87,7 @@ export default function Home() {
 
       <DesignShowcase />
       <PricingAndProcess />
+      <Footer />
     </div>
   );
 }
