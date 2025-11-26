@@ -11,7 +11,7 @@ export const FeatureHeader = ({ title, subtitle, type }: { title: string, subtit
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4 inline-block ${type === 'buyer' ? 'bg-blue-100 text-blue-600' : 'bg-gold-100 text-gold-600'}`}
+                className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4 inline-block ${type === 'buyer' ? 'bg-luxury-black text-gold-500' : 'bg-gold-100 text-gold-600'}`}
             >
                 {type === 'buyer' ? 'Included in Buyer Profile' : 'Included in Seller Profile'}
             </motion.span>

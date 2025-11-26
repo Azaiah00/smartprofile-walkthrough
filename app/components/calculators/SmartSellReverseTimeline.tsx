@@ -82,7 +82,8 @@ export const SmartSellReverseTimeline = () => {
         "Generates a custom step-by-step schedule",
         "Works backward from your goal date",
         "Visualizes the prep time needed for top dollar",
-        "Exportable plan for your fridge"
+        "Exportable plan for your fridge",
+        "Downloadable (PDF) and printable"
       ]}
     >
       <div className="space-y-6 font-sans text-luxury-black h-full flex flex-col">
