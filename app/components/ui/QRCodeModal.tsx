@@ -19,20 +19,20 @@ const BusinessCardSlide = () => {
           className="absolute inset-0 w-full h-full bg-luxury-black rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30"
           style={{ backfaceVisibility: 'hidden', rotateY: 0 }}
         >
-          <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+          <div className="absolute inset-0 p-6 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full" />
             
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Fred Sales</h3>
-              <p className="text-gold-500 text-sm uppercase tracking-widest">Real Advancement</p>
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-serif font-bold text-white mb-1">Fred Sales</h3>
+              <p className="text-gold-500 text-xs uppercase tracking-widest">Real Advancement</p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <p className="text-gold-500 text-sm font-bold uppercase tracking-wider">Buyer Profile Consultation</p>
-              <div className="bg-white p-4 rounded-xl shadow-lg border-2 border-gold-500">
-                <QrCode className="w-32 h-32 text-black" />
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-gold-500 text-xs font-bold uppercase tracking-wide text-center leading-tight px-2">Buyer Profile Consultation</p>
+              <div className="bg-white p-3 rounded-xl shadow-lg border-2 border-gold-500">
+                <QrCode className="w-28 h-28 text-black" />
               </div>
-              <p className="text-gray-400 text-xs mt-2">Click card to flip</p>
+              <p className="text-gray-400 text-[10px] mt-1">Click card to flip</p>
             </div>
           </div>
         </motion.div>
@@ -42,20 +42,20 @@ const BusinessCardSlide = () => {
           className="absolute inset-0 w-full h-full bg-luxury-black rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30"
           style={{ backfaceVisibility: 'hidden', rotateY: 180 }}
         >
-          <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+          <div className="absolute inset-0 p-6 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
             <div className="absolute top-0 left-0 w-32 h-32 bg-gold-500/10 rounded-br-full" />
             
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Fred Sales</h3>
-              <p className="text-gold-500 text-sm uppercase tracking-widest">Real Advancement</p>
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-serif font-bold text-white mb-1">Fred Sales</h3>
+              <p className="text-gold-500 text-xs uppercase tracking-widest">Real Advancement</p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <p className="text-gold-500 text-sm font-bold uppercase tracking-wider">Seller Profile Consultation</p>
-              <div className="bg-white p-4 rounded-xl shadow-lg border-2 border-gold-500">
-                <QrCode className="w-32 h-32 text-black" />
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-gold-500 text-xs font-bold uppercase tracking-wide text-center leading-tight px-2">Seller Profile Consultation</p>
+              <div className="bg-white p-3 rounded-xl shadow-lg border-2 border-gold-500">
+                <QrCode className="w-28 h-28 text-black" />
               </div>
-              <p className="text-gray-400 text-xs mt-2">Click card to flip</p>
+              <p className="text-gray-400 text-[10px] mt-1">Click card to flip</p>
             </div>
           </div>
         </motion.div>
