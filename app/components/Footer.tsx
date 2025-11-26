@@ -9,11 +9,6 @@ export const Footer = () => {
           <div>
             &copy; 2023 Real Advancement Real Estate. All rights reserved.
           </div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-gold-500 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gold-500 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-gold-500 transition-colors">Contact Support</a>
-          </div>
         </div>
       </Container>
     </footer>
