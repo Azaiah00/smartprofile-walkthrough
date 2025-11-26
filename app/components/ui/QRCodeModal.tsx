@@ -91,7 +91,8 @@ const InstagramSlide = () => (
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
         transition={{ type: "spring", damping: 25, stiffness: 200, delay: 0.5 }}
-        className="absolute bottom-0 left-0 right-0 bg-[#1C1C1E] rounded-t-3xl p-6 pb-10 shadow-2xl z-20 border-t border-gray-700"
+        className="absolute bottom-0 left-0 right-0 bg-[#1C1C1E] rounded-t-3xl p-6 pb-10 shadow-2xl z-20 border-t border-gray-700 max-h-[60%] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
     >
         <div className="w-12 h-1 bg-gray-600 rounded-full mx-auto mb-6" />
         <h3 className="text-white font-bold text-center mb-6 text-lg">Links</h3>
@@ -103,20 +104,24 @@ const InstagramSlide = () => (
                         <span className="text-black font-bold text-xs">SP</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-white font-bold text-sm">View SmartProfile</span>
-                        <span className="text-gray-400 text-xs">smartprofile.io/fredsales</span>
+                        <span className="text-white font-bold text-sm">Buyer Consultation Profile</span>
+                        <span className="text-gray-400 text-xs">smartprofile.io/fredsales/buyer</span>
                     </div>
                 </div>
                 <Share2 className="text-gray-500 w-4 h-4" />
             </div>
             
-            <div className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between opacity-50">
+            <div className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-[#3A3A3C] transition-colors">
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
-                       <Globe className="w-5 h-5 text-gray-400" />
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                        <span className="text-black font-bold text-xs">SP</span>
                     </div>
-                    <span className="text-white font-bold text-sm">Latest Listing</span>
+                    <div className="flex flex-col">
+                        <span className="text-white font-bold text-sm">Seller Consultation Profile</span>
+                        <span className="text-gray-400 text-xs">smartprofile.io/fredsales/seller</span>
+                    </div>
                 </div>
+                <Share2 className="text-gray-500 w-4 h-4" />
             </div>
         </div>
     </motion.div>
@@ -147,24 +152,44 @@ const EmailSignatureSlide = () => (
           </div>
       </div>
       
-      {/* The SmartProfile Banner */}
-      <motion.div 
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3, type: "spring" }}
-        className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group"
-      >
-          <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
-              <div>
-                  <p className="text-gold-500 text-xs font-bold uppercase tracking-wider">View My Full Profile</p>
-                  <p className="text-white text-sm font-medium">Calculators, Guides & Listings</p>
+      {/* The SmartProfile Banners */}
+      <div className="space-y-3">
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.3, type: "spring" }}
+            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group"
+          >
+              <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
+                  <div>
+                      <p className="text-gold-500 text-xs font-bold uppercase tracking-wider">Buyer Consultation Profile</p>
+                      <p className="text-white text-sm font-medium">Calculators, Guides & Resources</p>
+                  </div>
               </div>
-          </div>
-          <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">
-              <ChevronRight className="w-4 h-4" />
-          </div>
-      </motion.div>
+              <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">
+                  <ChevronRight className="w-4 h-4" />
+              </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.5, type: "spring" }}
+            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group"
+          >
+              <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
+                  <div>
+                      <p className="text-gold-500 text-xs font-bold uppercase tracking-wider">Seller Consultation Profile</p>
+                      <p className="text-white text-sm font-medium">Net Sheets, ROI & Pricing Tools</p>
+                  </div>
+              </div>
+              <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">
+                  <ChevronRight className="w-4 h-4" />
+              </div>
+          </motion.div>
+      </div>
   </div>
 );
 
@@ -173,8 +198,6 @@ const slides = [
     { component: InstagramSlide, title: "Social Bio Link", desc: "Seamless integration with Instagram & TikTok." },
     { component: EmailSignatureSlide, title: "Email Signature", desc: "Professional banner for every email you send." }
 ];
-
-import { Globe } from 'lucide-react';
 
 export const QRCodeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [currentSlide, setCurrentStep] = useState(0);
@@ -201,6 +224,7 @@ export const QRCodeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             className="relative z-10 w-full max-w-4xl flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Controls */}
             <div className="flex items-center justify-between w-full mb-8 px-4 md:px-12">
@@ -233,7 +257,7 @@ export const QRCodeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             </div>
 
             {/* Slide Content */}
-            <div className="h-[500px] w-full flex items-center justify-center">
+            <div className="h-[500px] w-full flex items-center justify-center overflow-hidden">
                 <motion.div
                     key={currentSlide}
                     initial={{ opacity: 0, x: 50 }}
@@ -241,6 +265,7 @@ export const QRCodeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ type: "spring", bounce: 0.2 }}
                     className="w-full flex justify-center"
+                    onClick={(e) => e.stopPropagation()}
                 >
                     <CurrentComponent />
                 </motion.div>
