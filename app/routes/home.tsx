@@ -19,7 +19,6 @@ import { NetSheetCalculator } from "../components/calculators/NetSheetCalculator
 import { ROICalculator } from "../components/calculators/ROICalculator";
 import { MortgageCalculator } from "../components/calculators/MortgageCalculator";
 import { ClosingCostCalculator } from "../components/calculators/ClosingCostCalculator";
-import { RenovationROISimulator } from "../components/calculators/RenovationROISimulator";
 import { SmartSellReverseTimeline } from "../components/calculators/SmartSellReverseTimeline";
 import { Section } from "../components/ui/Section";
 import { Container } from "../components/ui/Container";
@@ -85,7 +84,6 @@ export default function Home() {
         <ROICalculator />
         <MortgageCalculator />
         <ClosingCostCalculator />
-        <RenovationROISimulator />
         <SmartSellReverseTimeline />
       </div>
       
