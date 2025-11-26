@@ -25,7 +25,7 @@ export const ExpandedRealtorProfile = () => {
       <div className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
              {/* Background Image with Overlay */}
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+             <div className="absolute inset-0 bg-[url('/fred-profile-screenshot.png')] bg-cover bg-center opacity-10"></div>
              <div className="absolute inset-0 bg-gradient-to-r from-luxury-cream via-luxury-cream/90 to-transparent"></div>
         </div>
         

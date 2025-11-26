@@ -18,7 +18,6 @@ export const Hero = () => {
     <div ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-luxury-cream perspective-1000">
       {/* Background Effects with Parallax */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/fred-profile-screenshot.png')] bg-cover bg-center opacity-20" />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.1),transparent_60%)]" />
         <motion.div 
             animate={{ 
