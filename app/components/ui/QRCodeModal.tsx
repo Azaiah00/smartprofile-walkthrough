@@ -128,7 +128,12 @@ const InstagramSlide = () => (
         <h3 className="text-white font-bold text-center mb-6 text-lg">Links</h3>
         
         <div className="space-y-3">
-            <div className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-[#3A3A3C] transition-colors">
+            <a 
+                href="https://homebuyerinformation.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-[#3A3A3C] transition-colors block"
+            >
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
                         <span className="text-black font-bold text-xs">SP</span>
@@ -139,9 +144,14 @@ const InstagramSlide = () => (
                     </div>
                 </div>
                 <Share2 className="text-gray-500 w-4 h-4" />
-            </div>
+            </a>
             
-            <div className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-[#3A3A3C] transition-colors">
+            <a 
+                href="https://homesellerinformation.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#2C2C2E] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-[#3A3A3C] transition-colors block"
+            >
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
                         <span className="text-black font-bold text-xs">SP</span>
@@ -152,7 +162,7 @@ const InstagramSlide = () => (
                     </div>
                 </div>
                 <Share2 className="text-gray-500 w-4 h-4" />
-            </div>
+            </a>
         </div>
     </motion.div>
     
@@ -184,11 +194,14 @@ const EmailSignatureSlide = () => (
       
       {/* The SmartProfile Banners */}
       <div className="space-y-3">
-          <motion.div 
+          <motion.a 
+            href="https://homebuyerinformation.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3, type: "spring" }}
-            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group"
+            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group block"
           >
               <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
@@ -200,13 +213,16 @@ const EmailSignatureSlide = () => (
               <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">
                   <ChevronRight className="w-4 h-4" />
               </div>
-          </motion.div>
+          </motion.a>
           
-          <motion.div 
+          <motion.a 
+            href="https://homesellerinformation.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring" }}
-            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group"
+            className="bg-luxury-black rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-lg transition-shadow group block"
           >
               <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
@@ -218,7 +234,7 @@ const EmailSignatureSlide = () => (
               <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">
                   <ChevronRight className="w-4 h-4" />
               </div>
-          </motion.div>
+          </motion.a>
       </div>
   </div>
 );
