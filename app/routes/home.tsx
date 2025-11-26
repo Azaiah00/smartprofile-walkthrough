@@ -13,7 +13,6 @@ import { StagingComparison } from "../components/StagingComparison";
 import { VersatilityGrid } from "../components/VersatilityGrid";
 import { DesignShowcase } from "../components/DesignShowcase";
 import { PricingAndProcess } from "../components/PricingAndProcess";
-import { Footer } from "../components/Footer";
 import { EducationalResources } from "../components/EducationalResources";
 import { NetSheetCalculator } from "../components/calculators/NetSheetCalculator";
 import { ROICalculator } from "../components/calculators/ROICalculator";
@@ -91,7 +90,6 @@ export default function Home() {
 
       <DesignShowcase />
       <PricingAndProcess />
-      <Footer />
     </div>
   );
 }
