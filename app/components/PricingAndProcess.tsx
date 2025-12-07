@@ -172,12 +172,12 @@ export const PricingAndProcess = () => {
                 description="The complete digital presence solution for top producers and teams. Premium features and dedicated support."
                 features={[
                     "Everything in Double Profile",
-                    "100 Free Virtual Staging Photos (included)",
                     "Dedicated Account Manager",
                     "Custom Feature Development",
                     "Exclusive Beta Feature Access",
                     "Quarterly Strategy Sessions",
                     "Custom Integrations (CRM, tools, etc.)",
+                    "100 Free Virtual Staging Photos (included)",
                     "200 Custom SmartCards"
                 ]}
                 isEnterprise={true}
@@ -206,7 +206,7 @@ export const PricingAndProcess = () => {
                 description="Ideal for partners or agents wanting distinct profiles for different niches. 2 Profiles included."
                 features={[
                     "Everything in Single Profile",
-                    "2 Complete SmartProfiles",
+                    "2 Complete SmartProfiles (Buyer & Seller Profile Options)",
                     "2-for-1 Monthly Maintenance",
                     "50 Custom 'SmartCards' (Free)",
                     "Unified Brand Strategy",
