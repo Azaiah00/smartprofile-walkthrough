@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { BeforeAfterSlider } from './ui/BeforeAfterSlider';
 import { Check, Zap, Home, Building2, Sparkles } from 'lucide-react';
 
 const StagingPackage = ({
@@ -109,6 +110,26 @@ export const VirtualStagingAddOn = () => {
                 <p className="text-xs text-gray-400">Quality control & curation</p>
               </div>
             </div>
+          </motion.div>
+
+          {/* Before/After Slider */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="mb-16"
+          >
+            <BeforeAfterSlider 
+              beforeImage="/images/virtual-staging-before.jpg"
+              afterImage="/images/virtual-staging-after.PNG"
+              beforeLabel="Empty Room"
+              afterLabel="Virtually Staged"
+              className="aspect-[4/3] md:aspect-[16/9]"
+            />
+            <p className="text-center text-gray-500 text-sm mt-4 italic">
+              Drag the slider to see the transformation
+            </p>
           </motion.div>
 
           {/* Target Audiences */}

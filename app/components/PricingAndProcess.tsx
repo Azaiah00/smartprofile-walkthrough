@@ -21,6 +21,7 @@ const PricingCard = ({
   description, 
   features, 
   isPopular = false,
+  isEnterprise = false,
   delay = 0
 }: { 
   title: string, 
@@ -29,6 +30,7 @@ const PricingCard = ({
   description: string, 
   features: string[],
   isPopular?: boolean,
+  isEnterprise?: boolean,
   delay?: number
 }) => (
   <motion.div
@@ -36,14 +38,19 @@ const PricingCard = ({
     whileInView={{ opacity: 1, y: 0, scale: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay, type: "spring" }}
-    className={`bg-luxury-black border ${isPopular ? 'border-gold-500 shadow-[0_0_30px_rgba(212,175,55,0.15)]' : 'border-gray-800'} rounded-[2.5rem] p-8 relative overflow-hidden flex-1`}
+    className={`bg-luxury-black border ${isPopular ? 'border-gold-500 shadow-[0_0_30px_rgba(212,175,55,0.15)]' : isEnterprise ? 'border-gold-500/60 shadow-[0_0_40px_rgba(212,175,55,0.25)]' : 'border-gray-800'} rounded-[2.5rem] p-8 relative overflow-hidden flex-1 ${isEnterprise ? 'ring-2 ring-gold-500/30' : ''}`}
   >
     {isPopular && (
       <div className="absolute top-0 right-0 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-20">
         Best Value
       </div>
     )}
-    <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/5 rounded-full blur-[80px]" />
+    {isEnterprise && (
+      <div className="absolute top-0 right-0 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-20 shadow-lg">
+        Elite
+      </div>
+    )}
+    <div className={`absolute top-0 right-0 w-80 h-80 ${isEnterprise ? 'bg-gold-500/10' : 'bg-gold-500/5'} rounded-full blur-[80px]`} />
     
     <div className="relative z-10 flex flex-col h-full">
       <h3 className="text-2xl font-serif font-bold text-white mb-2">{title}</h3>
@@ -145,7 +152,30 @@ export const PricingAndProcess = () => {
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <PricingCard 
+                title="Enterprise"
+                priceSetup="4,999"
+                priceMonthly="50"
+                description="The complete digital presence solution for top producers and teams. Premium features and dedicated support."
+                features={[
+                    "Everything in Double Profile",
+                    "Up to 5 SmartProfiles Included",
+                    "100 Free Virtual Staging Photos (included)",
+                    "Dedicated Account Manager",
+                    "Custom Feature Development",
+                    "White-Label Options",
+                    "Advanced Analytics & Conversion Tracking",
+                    "Exclusive Beta Feature Access",
+                    "Quarterly Strategy Sessions",
+                    "Custom Integrations (CRM, tools, etc.)",
+                    "Unlimited Custom SmartCards",
+                    "Professional Copywriting & Content",
+                    "Conversion Optimization"
+                ]}
+                isEnterprise={true}
+                delay={0.1}
+            />
             <PricingCard 
                 title="Single Profile"
                 priceSetup="500"
@@ -159,6 +189,7 @@ export const PricingAndProcess = () => {
                     "All Interactive Calculators",
                     "Mobile & SEO Optimization"
                 ]}
+                delay={0.2}
             />
             <PricingCard 
                 title="Double Profile"
@@ -174,7 +205,7 @@ export const PricingAndProcess = () => {
                     "Priority Support"
                 ]}
                 isPopular={true}
-                delay={0.2}
+                delay={0.3}
             />
         </div>
 
