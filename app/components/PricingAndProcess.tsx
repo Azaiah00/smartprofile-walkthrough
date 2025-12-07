@@ -40,20 +40,30 @@ const PricingCard = ({
     transition={{ duration: 0.8, delay, type: "spring" }}
     className={`bg-luxury-black border ${isPopular ? 'border-gold-500 shadow-[0_0_30px_rgba(212,175,55,0.15)]' : isEnterprise ? 'border-gold-500/60 shadow-[0_0_40px_rgba(212,175,55,0.25)]' : 'border-gray-800'} rounded-[2.5rem] p-8 relative overflow-hidden flex-1 ${isEnterprise ? 'ring-2 ring-gold-500/30' : ''}`}
   >
-    {isPopular && (
-      <div className="absolute top-0 right-0 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-20">
-        Best Value
-      </div>
-    )}
-    {isEnterprise && (
-      <div className="absolute top-0 right-0 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-20 shadow-lg">
-        Elite
-      </div>
-    )}
     <div className={`absolute top-0 right-0 w-80 h-80 ${isEnterprise ? 'bg-gold-500/10' : 'bg-gold-500/5'} rounded-full blur-[80px]`} />
     
     <div className="relative z-10 flex flex-col h-full">
+      {/* Badge Section - Centered at top */}
+      {isPopular && (
+        <div className="flex justify-center mb-4">
+          <div className="bg-gradient-to-r from-gold-500 to-gold-600 text-white text-sm font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg transform hover:scale-105 transition-transform">
+            Best Value
+          </div>
+        </div>
+      )}
       <h3 className="text-2xl font-serif font-bold text-white mb-2">{title}</h3>
+      
+      {/* Badge section - above price for Enterprise */}
+      {isEnterprise && (
+        <div className="mb-4">
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-white text-sm font-bold px-6 py-2.5 rounded-full uppercase tracking-wider shadow-lg transform hover:scale-105 transition-transform border-2 border-gold-400/40 animate-pulse flex items-center justify-center gap-2 text-center">
+              <Star className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="text-center">Top Producers Only</span>
+            </div>
+          </div>
+        </div>
+      )}
       
       <div className="flex flex-col gap-1 mb-6">
           <div className="flex items-baseline gap-2">
@@ -154,24 +164,19 @@ export const PricingAndProcess = () => {
         {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <PricingCard 
-                title="Enterprise"
+                title="Elite"
                 priceSetup="4,999"
                 priceMonthly="50"
                 description="The complete digital presence solution for top producers and teams. Premium features and dedicated support."
                 features={[
                     "Everything in Double Profile",
-                    "Up to 5 SmartProfiles Included",
                     "100 Free Virtual Staging Photos (included)",
                     "Dedicated Account Manager",
                     "Custom Feature Development",
-                    "White-Label Options",
-                    "Advanced Analytics & Conversion Tracking",
                     "Exclusive Beta Feature Access",
                     "Quarterly Strategy Sessions",
                     "Custom Integrations (CRM, tools, etc.)",
-                    "Unlimited Custom SmartCards",
-                    "Professional Copywriting & Content",
-                    "Conversion Optimization"
+                    "200 Custom SmartCards"
                 ]}
                 isEnterprise={true}
                 delay={0.1}
@@ -187,7 +192,8 @@ export const PricingAndProcess = () => {
                     "Lead Capture Integration",
                     "Monthly Performance Reports",
                     "All Interactive Calculators",
-                    "Mobile & SEO Optimization"
+                    "Mobile & SEO Optimization",
+                    "White-Label Options"
                 ]}
                 delay={0.2}
             />
