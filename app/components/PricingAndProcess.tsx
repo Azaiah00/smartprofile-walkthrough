@@ -91,9 +91,11 @@ const PricingCard = ({
           ))}
       </ul>
 
-      <div className="p-3 bg-gold-500/10 rounded-xl border border-gold-500/20 text-center mt-auto">
-          <p className="text-gold-500 text-xs font-medium uppercase tracking-wider">Limited availability</p>
-      </div>
+      {isEnterprise && (
+        <div className="p-3 bg-gold-500/10 rounded-xl border border-gold-500/20 text-center mt-auto">
+            <p className="text-gold-500 text-xs font-medium uppercase tracking-wider">Limited availability</p>
+        </div>
+      )}
     </div>
   </motion.div>
 );
