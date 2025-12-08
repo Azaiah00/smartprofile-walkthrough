@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
-import { Calculator, DollarSign, TrendingUp, Home } from 'lucide-react';
+import { Calculator, DollarSign, Home } from 'lucide-react';
 import { clsx } from 'clsx';
 
 // Mockup components for the calculators
@@ -32,37 +32,6 @@ const NetSheetPreview = () => (
     <div className="mt-6 pt-4 border-t bg-gold-50 rounded-lg p-4">
       <div className="text-sm text-gold-800 font-medium uppercase">Estimated Net Proceeds</div>
       <div className="text-3xl font-bold text-gold-600">$245,000</div>
-    </div>
-  </div>
-);
-
-const ROIPreview = () => (
-  <div className="p-6 bg-white rounded-xl shadow-sm h-full flex flex-col">
-    <h4 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Home Improvement ROI</h4>
-    <div className="space-y-6 flex-1">
-      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
-        <div>
-            <div className="font-bold text-gray-800">Minor Kitchen Remodel</div>
-            <div className="text-xs text-gray-500">Avg. Cost: $26,000</div>
-        </div>
-        <div className="text-right">
-            <div className="text-green-600 font-bold">+85%</div>
-            <div className="text-xs text-gray-500">ROI</div>
-        </div>
-      </div>
-      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
-        <div>
-            <div className="font-bold text-gray-800">Garage Door Replacement</div>
-            <div className="text-xs text-gray-500">Avg. Cost: $3,900</div>
-        </div>
-        <div className="text-right">
-            <div className="text-green-600 font-bold">+93%</div>
-            <div className="text-xs text-gray-500">ROI</div>
-        </div>
-      </div>
-    </div>
-    <div className="mt-4 text-center text-sm text-gray-500">
-      Helping your sellers spend money where it counts.
     </div>
   </div>
 );
@@ -116,13 +85,6 @@ const tools = [
     icon: DollarSign,
     description: "Show sellers exactly what they'll walk away with. Builds trust through transparency.",
     component: NetSheetPreview
-  },
-  {
-    id: 'roi',
-    title: 'ROI Calculator',
-    icon: TrendingUp,
-    description: "Guide pre-sale improvements with data-backed ROI estimates.",
-    component: ROIPreview
   },
   {
     id: 'mortgage',

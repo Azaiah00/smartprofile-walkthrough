@@ -490,7 +490,6 @@ export const PrimaryWebsiteModal = ({ isOpen, onClose }: { isOpen: boolean; onCl
                           <p className="font-bold text-gold-800 mb-2">Interactive Tools Available:</p>
                           <ul className="text-sm text-gold-700 space-y-1">
                             <li>• Net Sheet Calculator</li>
-                            <li>• ROI Calculator</li>
                             <li>• Mortgage Calculator</li>
                             <li>• Closing Cost Calculator</li>
                           </ul>

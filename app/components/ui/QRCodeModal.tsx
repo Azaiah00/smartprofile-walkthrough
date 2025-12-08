@@ -228,7 +228,7 @@ const EmailSignatureSlide = () => (
                   <div className="w-10 h-10 bg-gold-500 rounded flex items-center justify-center text-black font-bold">SP</div>
                   <div>
                       <p className="text-gold-500 text-xs font-bold uppercase tracking-wider">Seller Consultation Profile</p>
-                      <p className="text-white text-sm font-medium">Net Sheets, ROI & Pricing Tools</p>
+                      <p className="text-white text-sm font-medium">Net Sheets & Pricing Tools</p>
                   </div>
               </div>
               <div className="bg-white/10 p-2 rounded-full group-hover:bg-gold-500 group-hover:text-black transition-colors text-white">

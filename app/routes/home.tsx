@@ -17,7 +17,6 @@ import { VirtualStagingAddOn } from "../components/VirtualStagingAddOn";
 import { Footer } from "../components/Footer";
 import { EducationalResources } from "../components/EducationalResources";
 import { NetSheetCalculator } from "../components/calculators/NetSheetCalculator";
-import { ROICalculator } from "../components/calculators/ROICalculator";
 import { MortgageCalculator } from "../components/calculators/MortgageCalculator";
 import { ClosingCostCalculator } from "../components/calculators/ClosingCostCalculator";
 import { SmartSellReverseTimeline } from "../components/calculators/SmartSellReverseTimeline";
@@ -82,7 +81,6 @@ export default function Home() {
             </Container>
         </Section>
         <NetSheetCalculator />
-        <ROICalculator />
         <MortgageCalculator />
         <ClosingCostCalculator />
         <SmartSellReverseTimeline />
